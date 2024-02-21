@@ -36,7 +36,7 @@ final class ErrorViewSnapshotTests: FBSnapshotTestCase {
         errorVC = nil
     }
     
-    func test_LaunchFor_ErrorView() {
+    func testLaunchForErrorView() {
         FBSnapshotVerifyView(errorVC?.view ?? UIView())
     }
 

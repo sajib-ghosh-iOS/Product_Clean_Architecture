@@ -36,8 +36,8 @@ final class HeaderImageViewSnapshotTests: FBSnapshotTestCase {
         headerImageVC = nil
     }
     
-    func test_LaunchFor_HeaderImageView() {
-        let expectation = XCTestExpectation(description: "Some description")
+    func testLaunchForHeaderImageView() {
+        let expectation = XCTestExpectation(description: "")
         let result = XCTWaiter.wait(for: [expectation], timeout: 3.0) // wait and store the result
         FBSnapshotVerifyView(headerImageVC?.view ?? UIView())
         XCTAssertEqual(result, .timedOut)

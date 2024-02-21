@@ -43,11 +43,11 @@ final class ProductCleanSnapshotTests: FBSnapshotTestCase {
         FBSnapshotVerifyViewController(productListVC!)
     }
     
-    func test_LaunchFor_ProductView_Success() {
+    func testLaunchForProductViewSuccess() {
         viewModel.products = products
         FBSnapshotVerifyView(productListVC?.view ?? UIView())
     }
-    func test_LaunchFor_ProductView_Failure() {
+    func testLaunchForProductViewFailure() {
         viewModel.isError = true
         FBSnapshotVerifyView(productListVC?.view ?? UIView())
     }

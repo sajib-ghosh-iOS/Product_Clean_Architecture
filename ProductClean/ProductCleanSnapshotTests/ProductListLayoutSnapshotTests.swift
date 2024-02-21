@@ -41,7 +41,7 @@ final class ProductListLayoutSnapshotTests: FBSnapshotTestCase {
         productListLayoutVC = nil
     }
     
-    func test_LaunchFor_productListLayoutView() {
+    func testLaunchForProductListLayoutView() {
         FBSnapshotVerifyView(productListLayoutVC?.view ?? UIView())
     }
 

@@ -13,6 +13,7 @@ enum NetworkError: Error {
     case badRequest
     case failed
     case noResponse
+    case noData
     case unableToDecode
     var description: String {
         switch self {
@@ -21,6 +22,7 @@ enum NetworkError: Error {
         case .badRequest: return "Bad Request"
         case .failed: return "Network Request Failed"
         case .noResponse: return "No response"
+        case .noData: return "No Data"
         case .unableToDecode: return "Response can't be decoded"
         }
     }

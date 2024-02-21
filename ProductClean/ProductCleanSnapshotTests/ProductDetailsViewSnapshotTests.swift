@@ -36,8 +36,8 @@ final class ProductDetailsSnapshotTests: FBSnapshotTestCase {
         productDetailsVC = nil
     }
     
-    func test_LaunchFor_ProductDetailsView() {
-        let expectation = XCTestExpectation(description: "Some description")
+    func testLaunchForProductDetailsView() {
+        let expectation = XCTestExpectation(description: "")
         let result = XCTWaiter.wait(for: [expectation], timeout: 2.0) // wait and store the result
         FBSnapshotVerifyView(productDetailsVC?.view ?? UIView())
         XCTAssertEqual(result, .timedOut)

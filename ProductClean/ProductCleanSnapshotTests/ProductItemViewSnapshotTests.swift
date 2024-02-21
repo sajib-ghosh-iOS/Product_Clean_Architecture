@@ -36,7 +36,7 @@ final class ProductItemViewSnapshotTests: FBSnapshotTestCase {
         productListCellVC = nil
     }
     
-    func test_LaunchFor_productListCellView() {
+    func testLaunchForProductListCellView() {
         FBSnapshotVerifyView(productListCellVC?.view ?? UIView())
     }
 
