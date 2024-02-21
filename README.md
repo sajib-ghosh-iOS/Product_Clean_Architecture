@@ -1,1 +1,1 @@
-Please use iPhone 15 for Snapshot tests.
+Please run on iPhone 15 simulator for Snapshot tests.
