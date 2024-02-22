@@ -28,15 +28,14 @@ class ProductListViewModelTest: XCTestCase {
     func testProductListViewModelSuccess() async throws {
         mockProductUseCase.response = MockData.productList
         await productListViewModel.fetchProducts()
-        let expectation = XCTestExpectation(description: "")
-        let result = XCTWaiter.wait(for: [expectation], timeout: 1.0)
         XCTAssertTrue(productListViewModel.products.count == 5)
-        XCTAssertEqual(result, .timedOut)
     }
     
     func testProductListViewModelFailure() async throws {
         mockProductUseCase.error = NetworkError.failed
+        await productListViewModel.fetchProducts()
         XCTAssertTrue(productListViewModel.products.count == 0)
         XCTAssertNotNil(productListViewModel.error)
+        XCTAssertTrue(productListViewModel.isError)
     }
 }

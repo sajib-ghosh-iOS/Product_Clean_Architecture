@@ -7,9 +7,9 @@
 
 import SwiftUI
 
-struct ProductListView<Model>: View where Model: ProductListViewModel {
-    @ObservedObject private var viewModel: Model
-    init(viewModel: Model) {
+struct ProductListView<ViewModel>: View where ViewModel: ProductListViewModel {
+    @ObservedObject private var viewModel: ViewModel
+    init(viewModel: ViewModel) {
         self.viewModel = viewModel
     }
     var body: some View {
@@ -21,27 +21,23 @@ struct ProductListView<Model>: View where Model: ProductListViewModel {
                 ProductListLayout(items: viewModel.products)
                     .overlay {
                         if viewModel.isError {
-                            ErrorView(errorTitle: "Error", errorDescription: viewModel.error) {
+                            ErrorView(errorTitle: AppConstant.errorTitle, errorDescription: viewModel.error) {
                                 Task {
                                     await fetchProducts()
                                 }
                             }
                         }
                     }
+                    .navigationTitle(AppConstant.productListTitle)
             }
         }
-        .navigationTitle("Products")
         .task {
             await fetchProducts()
         }
     }
-    func fetchProducts() async {
+    private func fetchProducts() async {
         if viewModel.isEmpty {
             await viewModel.fetchProducts()
         }
     }
-}
-
-#Preview {
-    ProductListView(viewModel: DefaultProductListViewModel(useCase: nil))
 }

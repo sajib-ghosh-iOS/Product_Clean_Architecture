@@ -18,14 +18,9 @@ struct ProductListLayout: View {
             }
         }
         .navigationDestination(for: ProductListItemViewModel.self, destination: { item in
-            // move to details view
-            let module = ProductDetailsModule()
-            module.generateProductDetailsView(with: item.toProductDetails())
+            /// Move to Product Details View
+            ProductDetailsView(item: item)
         })
         .preferredColorScheme(.light)
     }
-}
-
-#Preview {
-    ProductListLayout(items: [ProductListItemViewModel]())
 }

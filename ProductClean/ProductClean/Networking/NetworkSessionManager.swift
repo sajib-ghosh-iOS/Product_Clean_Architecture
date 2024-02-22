@@ -11,7 +11,7 @@ protocol NetworkSessionManager {
     func data(_ request: URLRequest) async throws -> (Data?, URLResponse?)
 }
 
-class DefaultNetworkSessionManager: NetworkSessionManager {
+final class DefaultNetworkSessionManager: NetworkSessionManager {
     private let session: URLSession
     init(session: URLSession = .shared) {
         self.session = session

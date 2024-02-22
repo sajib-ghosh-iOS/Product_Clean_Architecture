@@ -7,7 +7,6 @@
 
 import SwiftUI
 import SDWebImageSwiftUI
-
 struct HeaderImageView: View {
     let urlString: String
     let height: CGFloat
@@ -23,8 +22,4 @@ struct HeaderImageView: View {
             .frame(height: height)
             .preferredColorScheme(.light)
     }
-}
-
-#Preview {
-    HeaderImageView(urlString: "https://cdn.dummyjson.com/product-images/100/thumbnail.jpg", height: 300)
 }

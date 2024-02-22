@@ -26,7 +26,7 @@ class MockData {
         loadJsonData("Products")
     }
     
-    static func loadJsonData(_ fromFile: String) -> Data {
+    private static func loadJsonData(_ fromFile: String) -> Data {
         let path = Bundle(for: self).path(forResource: fromFile, ofType: "json")
         let jsonString = try! String(contentsOfFile: path!, encoding: .utf8)
         let data = jsonString.data(using: .utf8)!

@@ -17,7 +17,7 @@ final class DefaultProductListService: ProductListService {
         self.netoworkManager = netoworkManager
     }
     func fetchProductListFromNetwork() async throws -> ProductPageDataListDTO {
-        let networkRequest = DefaultNetworkRequest(path: "/products")
+        let networkRequest = DefaultNetworkRequest(path: APIPathConstant.products)
         return try await netoworkManager.fetch(request: networkRequest)
     }
 }

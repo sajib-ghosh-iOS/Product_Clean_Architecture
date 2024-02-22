@@ -8,8 +8,13 @@
 import Foundation
 
 final class AppDIContainer {
+    private var networkManager: NetworkManager = {
+        let networkManager = DefaultNetworkManager(sessionManager: DefaultNetworkSessionManager(session: SharedURLSession.shared))
+        return networkManager
+    }()
+    
     lazy var productListView: ProductListView = {
-        let productListModule = ProductListModule(networkManager: DefaultNetworkManager())
-        return productListModule.generateProductListView()
+        let productsModule = ProductsModule(networkManager: networkManager)
+        return productsModule.generateProductListView()
     }()
 }

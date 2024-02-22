@@ -6,8 +6,6 @@
 //
 
 import XCTest
-
-import XCTest
 import FBSnapshotTestCase
 import SwiftUI
 @testable import ProductClean
@@ -15,10 +13,7 @@ import SwiftUI
 final class ProductListLayoutSnapshotTests: FBSnapshotTestCase {
 
     lazy var productListLayoutVC : UIHostingController<ProductListLayout>? = {
-        let productListLayoutVC = ProductListLayout(items: [
-            ProductListItemViewModel(id: 1, title: "Title 20", description: "Description 20", price: 200, image: "https://cdn.dummyjson.com/product-images/20/thumbnail.jpg"),
-            ProductListItemViewModel(id: 2, title: "Title 30", description: "Description 30", price: 300, image: "https://cdn.dummyjson.com/product-images/30/thumbnail.jpg")
-        ])
+        let productListLayoutVC = ProductListLayout(items: MockData.productList)
         return UIHostingController(rootView: productListLayoutVC)
     }()
     

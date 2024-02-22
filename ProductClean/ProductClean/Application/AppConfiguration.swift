@@ -7,6 +7,7 @@
 
 import Foundation
 
-class AppConfiguration {
+struct AppConfiguration {
     static let baseURL = "dummyjson.com"
+    static let currencyCode = "USD"
 }

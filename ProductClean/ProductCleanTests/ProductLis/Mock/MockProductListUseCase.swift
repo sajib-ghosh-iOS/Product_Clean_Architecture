@@ -5,7 +5,6 @@
 //  Created by Sajib Ghosh on 22/02/24.
 //
 
-import Foundation
 @testable import ProductClean
 
 class MockProductListUseCase: ProductListUseCase {

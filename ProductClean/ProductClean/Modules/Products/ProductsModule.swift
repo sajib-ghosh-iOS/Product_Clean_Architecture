@@ -6,24 +6,30 @@
 //
 
 import Foundation
-class ProductListModule {
+class ProductsModule {
     private let networkManager: NetworkManager
+    
     init(networkManager: NetworkManager) {
         self.networkManager = networkManager
     }
+    
     func generateProductListView() -> ProductListView<DefaultProductListViewModel> {
         ProductListView(viewModel: generateProductListViewModel())
     }
-    func generateProductListViewModel() -> DefaultProductListViewModel {
+    
+    private func generateProductListViewModel() -> DefaultProductListViewModel {
         DefaultProductListViewModel(useCase: generateProductListUseCase())
     }
-    func generateProductListUseCase() -> ProductListUseCase {
+    
+    private func generateProductListUseCase() -> ProductListUseCase {
         DefaultProductListUseCase(repository: generateProductListRepository())
     }
-    func generateProductListRepository() -> ProductListRepository {
+    
+    private func generateProductListRepository() -> ProductListRepository {
         DefaultProductListRepository(service: generateProductListService())
     }
-    func generateProductListService() -> ProductListService {
+    
+    private func generateProductListService() -> ProductListService {
         DefaultProductListService(netoworkManager: networkManager)
     }
 }

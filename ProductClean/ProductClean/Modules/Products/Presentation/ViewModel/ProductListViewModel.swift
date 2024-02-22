@@ -8,41 +8,41 @@
 import Foundation
 
 protocol ProductListViewModel: ObservableObject {
-    func fetchProducts() async
     var products: [ProductListItemViewModel] {get set}
-    var isEmpty: Bool {get}
     var isError: Bool {get}
     var error: String {get}
+    var isEmpty: Bool {get}
+    func fetchProducts() async
 }
+
 
 final class DefaultProductListViewModel: ProductListViewModel {
     @Published var products: [ProductListItemViewModel] = []
-    var isEmpty: Bool { return products.isEmpty }
     @Published var isError: Bool = false
     @Published var error: String = ""
-    private let productListUseCase: ProductListUseCase?
-    init(useCase: ProductListUseCase?) {
+    var isEmpty: Bool { return products.isEmpty }
+    
+    private let productListUseCase: ProductListUseCase!
+    init(useCase: ProductListUseCase) {
         self.productListUseCase = useCase
     }
-    func fetchProducts() async {
+    /// This method fetches products and catches error if any
+    @MainActor func fetchProducts() async {
         do {
-            if let productList = try await productListUseCase?.fetchProductList() {
-                DispatchQueue.main.async {
-                    self.products = self.transformFetchedProducts(products: productList)
-                }
-            }
+            let productList = try await productListUseCase.fetchProductList()
+            self.products = self.transformFetchedProducts(products: productList)
         } catch {
-            DispatchQueue.main.async {
-                self.isError = true
-                if let networkError = error as? NetworkError {
-                    self.error = networkError.description
-                } else {
-                    self.error = error.localizedDescription
-                }
+            self.isError = true
+            if let networkError = error as? NetworkError {
+                self.error = networkError.description
+            } else {
+                self.error = error.localizedDescription
             }
         }
     }
-    func transformFetchedProducts(products: [Product]) -> [ProductListItemViewModel] {
+    /// This method maps Product to ProductListItemViewModel
+    /// - Returns : array of ProductListItemViewModel
+    private func transformFetchedProducts(products: [Product]) -> [ProductListItemViewModel] {
         products.map { ProductListItemViewModel(id: $0.productId,
                                            title: $0.title ?? "",
                                            description: $0.description ?? "",

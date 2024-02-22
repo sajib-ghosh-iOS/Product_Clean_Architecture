@@ -17,15 +17,11 @@ struct ErrorView: View {
                                    systemImage: "exclamationmark.triangle.fill",
                                    description: Text(errorDescription))
             .frame(height: 200)
-            Button("Retry") {
+            Button(AppConstant.retry) {
                 retryAction()
             }
         }
         .animation(.easeInOut, value: 0.5)
         .preferredColorScheme(.light)
     }
-}
-
-#Preview {
-    ErrorView(errorTitle: "", errorDescription: "", retryAction: {})
 }

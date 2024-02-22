@@ -6,9 +6,6 @@
 //
 
 import Foundation
-protocol ProductListRepository {
-    func fetchProductList() async throws -> [ProductDomainListDTO]
-}
 
 final class DefaultProductListRepository: ProductListRepository {
     private let service: ProductListService

@@ -23,7 +23,7 @@ protocol NetworkRequest {
     var bodyParameters: [String: Any] {get set}
 }
 
-class DefaultNetworkRequest: NetworkRequest {
+final class DefaultNetworkRequest: NetworkRequest {
     var path: String
     var method: HTTPMethod
     var headerParameters: [String: String]

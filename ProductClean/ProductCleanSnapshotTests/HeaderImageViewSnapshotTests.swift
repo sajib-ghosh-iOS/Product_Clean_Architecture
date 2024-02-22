@@ -13,7 +13,7 @@ import SwiftUI
 final class HeaderImageViewSnapshotTests: FBSnapshotTestCase {
 
     lazy var headerImageVC : UIHostingController<HeaderImageView>? = {
-        let headerImageVC = HeaderImageView(urlString: "https://cdn.dummyjson.com/product-images/50/thumbnail.jpg", height: 300)
+        let headerImageVC = HeaderImageView(urlString: MockData.imageURLStrings[0], height: 300)
         return UIHostingController(rootView: headerImageVC)
     }()
     

@@ -11,7 +11,7 @@ protocol URLRequestGenerator {
     func generateURLRequest(from request: NetworkRequest) throws -> URLRequest
 }
 
-class DefaultURLRequestGenerator: URLRequestGenerator {
+final class DefaultURLRequestGenerator: URLRequestGenerator {
     func generateURLRequest(from request: NetworkRequest) throws -> URLRequest {
         let url = try createURL(with: request)
         var urlRequest = URLRequest(url: url, cachePolicy: .useProtocolCachePolicy, timeoutInterval: 10)

@@ -13,7 +13,7 @@ import SwiftUI
 final class ProductItemViewSnapshotTests: FBSnapshotTestCase {
 
     lazy var productListCellVC : UIHostingController<ProductItemView>? = {
-        let productListCellVC = ProductItemView(item: ProductListItemViewModel(id: 1, title: "Title 20", description: "Description 20", price: 200, image: "https://cdn.dummyjson.com/product-images/20/thumbnail.jpg"))
+        let productListCellVC = ProductItemView(item: MockData.productList[0])
         return UIHostingController(rootView: productListCellVC)
     }()
     

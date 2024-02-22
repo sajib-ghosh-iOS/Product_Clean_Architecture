@@ -1,13 +1,13 @@
 //
-//  ProductDetailsItemViewModel.swift
+//  ProductItemViewModel.swift
 //  ProductClean
 //
-//  Created by Sajib Ghosh on 21/02/24.
+//  Created by Sajib Ghosh on 20/02/24.
 //
 
 import Foundation
 
-struct ProductDetailsItemViewModel {
+struct ProductListItemViewModel: Hashable {
     var id: Int
     var title: String
     var description: String

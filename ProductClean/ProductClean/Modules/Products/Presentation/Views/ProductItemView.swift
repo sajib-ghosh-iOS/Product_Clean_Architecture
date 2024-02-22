@@ -13,16 +13,10 @@ struct ProductItemView: View {
         VStack(alignment: .leading) {
             HeaderImageView(urlString: item.image, height: 150)
             Text(item.title).font(.title)
-            Text("\(item.price, format: .currency(code: "USD"))")
+            Text(item.price, format: .currency(code: AppConfiguration.currencyCode))
                 .foregroundStyle(.red)
                 .font(.title2)
         }
         .preferredColorScheme(.light)
     }
-}
-
-#Preview { ProductItemView(item:
-                            ProductListItemViewModel(
-                        id: 1, title: "Title", description: "Description", price: 100, image: ""
-                    ))
 }

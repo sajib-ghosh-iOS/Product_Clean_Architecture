@@ -18,7 +18,7 @@ final class ProductCleanSnapshotTests: FBSnapshotTestCase {
         return UIHostingController(rootView: productListView)
     }()
     
-    let products = [ProductListItemViewModel(id: 1, title: "Title 1", description: "Description 1", price: 100, image: "https://cdn.dummyjson.com/product-images/20/thumbnail.jpg"),ProductListItemViewModel(id: 1, title: "Title 1", description: "Description 1", price: 100, image: "https://cdn.dummyjson.com/product-images/20/thumbnail.jpg")]
+    let products = MockData.productList
     
     override func setUp() {
         super.setUp()

@@ -11,7 +11,7 @@ protocol NetworkManager {
     func fetch<T: Decodable>(request: NetworkRequest) async throws -> T
 }
 
-class DefaultNetworkManager: NetworkManager {
+final class DefaultNetworkManager: NetworkManager {
     private let sessionManager: NetworkSessionManager
     private let requestGenerator: URLRequestGenerator
     init(sessionManager: NetworkSessionManager = DefaultNetworkSessionManager(),
