@@ -10,17 +10,13 @@ import FBSnapshotTestCase
 import SwiftUI
 @testable import ProductClean
 
-final class ErrorViewSnapshotTests: FBSnapshotTestCase {
+final class ErrorViewSnapshotTests: SpashotTestWrapper {
 
     lazy var errorVC : UIHostingController<ErrorView>? = {
         let errorVC = ErrorView(errorTitle: "Error", errorDescription: "Error Description", retryAction: {})
         return UIHostingController(rootView: errorVC)
     }()
     
-    override func setUp() {
-        super.setUp()
-        recordMode = true
-    }
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
         try super.setUpWithError()

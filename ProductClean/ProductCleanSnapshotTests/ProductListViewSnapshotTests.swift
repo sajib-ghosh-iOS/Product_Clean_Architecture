@@ -10,7 +10,7 @@ import FBSnapshotTestCase
 import SwiftUI
 @testable import ProductClean
 
-final class ProductCleanSnapshotTests: FBSnapshotTestCase {
+final class ProductCleanSnapshotTests: SpashotTestWrapper {
 
     let viewModel = ProductListViewModelMock()
     lazy var productListVC : UIHostingController<ProductListView>? = {
@@ -20,10 +20,6 @@ final class ProductCleanSnapshotTests: FBSnapshotTestCase {
     
     let products = MockData.productList
     
-    override func setUp() {
-        super.setUp()
-        recordMode = true
-    }
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
         try super.setUpWithError()
