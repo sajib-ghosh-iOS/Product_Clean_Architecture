@@ -41,3 +41,9 @@ struct ProductListView<ViewModel>: View where ViewModel: ProductListViewModel {
         }
     }
 }
+
+struct ProductListView_Previews: PreviewProvider {
+    static var previews: some View {
+        ProductListView(viewModel: ProductListView_Previews.getViewModel())
+    }
+}

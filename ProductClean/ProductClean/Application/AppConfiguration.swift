@@ -9,5 +9,4 @@ import Foundation
 
 struct AppConfiguration {
     static let baseURL = "dummyjson.com"
-    static let currencyCode = "USD"
 }

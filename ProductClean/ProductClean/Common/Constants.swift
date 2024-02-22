@@ -12,6 +12,8 @@ struct AppConstant {
     static let productListTitle = "Products"
     static let productDetailsTitle = "Product Details"
     static let retry = "Retry"
+    static let errorImage = "exclamationmark.triangle.fill"
+    static let currencyCode = "USD"
 }
 
 struct APIPathConstant {

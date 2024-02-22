@@ -14,7 +14,7 @@ struct ErrorView: View {
     var body: some View {
         VStack {
             ContentUnavailableView(errorTitle,
-                                   systemImage: "exclamationmark.triangle.fill",
+                                   systemImage: AppConstant.errorImage,
                                    description: Text(errorDescription))
             .frame(height: 200)
             Button(AppConstant.retry) {

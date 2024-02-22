@@ -15,7 +15,7 @@ struct ProductDetailsView: View {
                 HeaderImageView(urlString: item.image, height: 300)
                 Text(item.title)
                     .font(.title)
-                Text(item.price, format: .currency(code: AppConfiguration.currencyCode))
+                Text(item.price, format: .currency(code: AppConstant.currencyCode))
                     .font(.title2)
                 Text(item.description)
                     .font(.title3)
