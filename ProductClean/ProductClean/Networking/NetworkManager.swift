@@ -20,8 +20,8 @@ final class DefaultNetworkManager: NetworkManager {
         self.requestGenerator = requestGenerator
     }
     func fetch<T>(request: NetworkRequest) async throws -> T where T: Decodable {
+        guard let urlRequest = try? requestGenerator.generateURLRequest(from: request) else { throw NetworkError.invalidRequest }
         do {
-            let urlRequest = try requestGenerator.generateURLRequest(from: request)
             let (data, response) = try await sessionManager.data(urlRequest)
             guard let response = response as? HTTPURLResponse else { throw NetworkError.noResponse }
             if response.statusCode != 200 { throw NetworkError.failed }

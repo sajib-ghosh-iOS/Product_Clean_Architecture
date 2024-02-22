@@ -69,4 +69,13 @@ final class NetworkManagerTests: XCTestCase {
             XCTAssertEqual(error as! NetworkError, NetworkError.noResponse)
         }
     }
+    
+    func testInvalidRequestFailure() async throws {
+        let request = DefaultNetworkRequest(path: "Invalid")
+        do {
+            let _ = try await getProductData(request: request)
+        } catch {
+            XCTAssertEqual(error as! NetworkError, NetworkError.invalidRequest)
+        }
+    }
 }

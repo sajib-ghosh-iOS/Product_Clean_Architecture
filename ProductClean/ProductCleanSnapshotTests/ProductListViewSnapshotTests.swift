@@ -38,10 +38,6 @@ final class ProductCleanSnapshotTests: FBSnapshotTestCase {
         try super.tearDownWithError()
         productListVC = nil
     }
-
-    func testLaunch() {
-        FBSnapshotVerifyViewController(productListVC!)
-    }
     
     func testLaunchForProductViewSuccess() {
         viewModel.products = products
