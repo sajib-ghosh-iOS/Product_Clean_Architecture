@@ -12,6 +12,7 @@ protocol ProductListViewModelInput: ObservableObject {
     var isError: Bool {get}
     var error: String {get}
     var isEmpty: Bool {get}
+    func shouldShowLoader() -> Bool
 }
 
 protocol ProductListViewModelOutput: ObservableObject {
@@ -55,6 +56,10 @@ final class DefaultProductListViewModel: ProductListViewModel {
                                            description: $0.description ?? "",
                                                 price: $0.price?.currency ?? "",
                                            image: $0.thumbnail ?? "") }
+    }
+    
+    func shouldShowLoader() -> Bool {
+        return (isEmpty && !isError)
     }
 }
 

@@ -26,10 +26,12 @@ class ProductListViewModelTest: XCTestCase {
     }
 
     func testProductListViewModelSuccess() async throws {
+        XCTAssertTrue(productListViewModel.shouldShowLoader())
         mockProductUseCase.response = MockData.productList
         await productListViewModel.fetchProducts()
         XCTAssertTrue(productListViewModel.products.count == 5)
         XCTAssertEqual(productListViewModel.products.first?.price, "$549")
+        XCTAssertFalse(productListViewModel.shouldShowLoader())
     }
     
     func testProductListViewModelFailure() async throws {

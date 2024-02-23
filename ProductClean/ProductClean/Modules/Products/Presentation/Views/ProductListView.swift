@@ -14,7 +14,7 @@ struct ProductListView<ViewModel>: View where ViewModel: ProductListViewModel {
     }
     var body: some View {
         NavigationStack {
-            if viewModel.isEmpty && !viewModel.isError {
+            if viewModel.shouldShowLoader() {
                 ProgressView()
                     .progressViewStyle(.circular)
             } else {

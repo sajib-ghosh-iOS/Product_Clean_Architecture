@@ -13,4 +13,5 @@ class ProductListViewModelMock: ProductListViewModel {
     var isError: Bool = false
     var error: String = "Error"
     func fetchProducts() async {}
+    func shouldShowLoader() -> Bool { isEmpty && !isError }
 }
