@@ -29,6 +29,7 @@ class ProductListViewModelTest: XCTestCase {
         mockProductUseCase.response = MockData.productList
         await productListViewModel.fetchProducts()
         XCTAssertTrue(productListViewModel.products.count == 5)
+        XCTAssertEqual(productListViewModel.products.first?.price, "$549")
     }
     
     func testProductListViewModelFailure() async throws {
@@ -36,6 +37,7 @@ class ProductListViewModelTest: XCTestCase {
         await productListViewModel.fetchProducts()
         XCTAssertTrue(productListViewModel.products.count == 0)
         XCTAssertNotNil(productListViewModel.error)
+        XCTAssertEqual(productListViewModel.error, NetworkError.failed.description)
         XCTAssertTrue(productListViewModel.isError)
     }
 }

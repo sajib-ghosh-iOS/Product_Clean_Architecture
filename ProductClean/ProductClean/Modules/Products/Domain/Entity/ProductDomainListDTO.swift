@@ -20,7 +20,7 @@ extension ProductDomainListDTO {
         .init(productId: productId,
               title: title,
               description: description,
-              price: price,
+              price: Double(price ?? 0),
               thumbnail: thumbnail)
     }
 }

@@ -11,6 +11,6 @@ struct Product {
     let productId: Int
     let title: String?
     let description: String?
-    let price: Int?
+    let price: Double?
     let thumbnail: String?
 }
