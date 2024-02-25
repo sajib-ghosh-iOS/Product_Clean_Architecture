@@ -7,9 +7,6 @@
 
 import Foundation
 
-protocol NetworkSessionManager {
-    func data(_ request: URLRequest) async throws -> (Data?, URLResponse?)
-}
 
 final class DefaultNetworkSessionManager: NetworkSessionManager {
     private let session: URLSession

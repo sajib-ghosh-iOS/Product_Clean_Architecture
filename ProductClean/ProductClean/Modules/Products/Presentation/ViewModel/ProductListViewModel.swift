@@ -7,7 +7,7 @@
 
 import Foundation
 
-protocol ProductListViewModelInput: ObservableObject {
+protocol ProductListViewModelOutput: ObservableObject {
     var products: [ProductListItemViewModel] {get set}
     var isError: Bool {get}
     var error: String {get}
@@ -15,7 +15,7 @@ protocol ProductListViewModelInput: ObservableObject {
     func shouldShowLoader() -> Bool
 }
 
-protocol ProductListViewModelOutput: ObservableObject {
+protocol ProductListViewModelInput {
     func fetchProducts() async
 }
 
@@ -58,6 +58,8 @@ final class DefaultProductListViewModel: ProductListViewModel {
                                            image: $0.thumbnail ?? "") }
     }
     
+    /// This method check if the loader should be shown or not
+    /// - Returns: True if there the product array is empty and error is not there
     func shouldShowLoader() -> Bool {
         return (isEmpty && !isError)
     }

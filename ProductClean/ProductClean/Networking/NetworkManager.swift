@@ -7,6 +7,9 @@
 
 import Foundation
 
+protocol NetworkSessionManager {
+    func data(_ request: URLRequest) async throws -> (Data?, URLResponse?)
+}
 protocol NetworkManager {
     func fetch<T: Decodable>(request: NetworkRequest) async throws -> T
 }
