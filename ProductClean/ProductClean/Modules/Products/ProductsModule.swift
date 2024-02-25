@@ -7,10 +7,10 @@
 
 import Foundation
 class ProductsModule {
-    private let networkManager: NetworkManager
+    private let apiDataTransferService: DataTransferService
     
-    init(networkManager: NetworkManager) {
-        self.networkManager = networkManager
+    init(apiDataTransferService: DataTransferService) {
+        self.apiDataTransferService = apiDataTransferService
     }
     
     func generateProductListView() -> ProductListView<DefaultProductListViewModel> {
@@ -30,6 +30,6 @@ class ProductsModule {
     }
     
     private func generateProductListService() -> ProductListService {
-        DefaultProductListService(netoworkManager: networkManager)
+        DefaultProductListService(apiDataService: apiDataTransferService)
     }
 }

@@ -15,7 +15,3 @@ struct AppConstant {
     static let errorImage = "exclamationmark.triangle.fill"
     static let currencyIndentifier = "en_US"
 }
-
-struct APIPathConstant {
-    static let products = "/products"
-}

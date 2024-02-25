@@ -27,7 +27,6 @@
 		6D15AB632B84E7FA00481F94 /* ProductDataListDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D15AB622B84E7FA00481F94 /* ProductDataListDTO.swift */; };
 		6D15AB662B84E96E00481F94 /* ProductDomainListDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D15AB652B84E96E00481F94 /* ProductDomainListDTO.swift */; };
 		6D15AB682B84EEF800481F94 /* ProductListRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D15AB672B84EEF800481F94 /* ProductListRepository.swift */; };
-		6D15AB6A2B84EFA700481F94 /* ProductListService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D15AB692B84EFA700481F94 /* ProductListService.swift */; };
 		6D15AB6C2B85007000481F94 /* NetworkRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D15AB6B2B85007000481F94 /* NetworkRequest.swift */; };
 		6D15AB6E2B8501CF00481F94 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D15AB6D2B8501CF00481F94 /* NetworkError.swift */; };
 		6D15AB702B85060500481F94 /* URLRequestCreater.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D15AB6F2B85060500481F94 /* URLRequestCreater.swift */; };
@@ -65,6 +64,12 @@
 		6DE38BDD2B877E99008498A3 /* NetworkSessionManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DE38BDC2B877E99008498A3 /* NetworkSessionManagerTests.swift */; };
 		6DE38BE12B87A266008498A3 /* ProductListView_Previews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DE38BE02B87A266008498A3 /* ProductListView_Previews.swift */; };
 		6DE38BE32B87D98C008498A3 /* SpashotTestWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DE38BE22B87D98C008498A3 /* SpashotTestWrapper.swift */; };
+		6DE38BE52B8B33EC008498A3 /* NetworkConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DE38BE42B8B33EB008498A3 /* NetworkConfig.swift */; };
+		6DE38BE72B8B3739008498A3 /* DataTransferService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DE38BE62B8B3739008498A3 /* DataTransferService.swift */; };
+		6DE38BEA2B8B854E008498A3 /* ProductListService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DE38BE92B8B854E008498A3 /* ProductListService.swift */; };
+		6DE38BEC2B8B8613008498A3 /* APIEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DE38BEB2B8B8613008498A3 /* APIEndpoint.swift */; };
+		6DE38BEE2B8B8AD5008498A3 /* MockDataTransferService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DE38BED2B8B8AD5008498A3 /* MockDataTransferService.swift */; };
+		6DE38BF02B8B9C4E008498A3 /* DataTransferTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DE38BEF2B8B9C4E008498A3 /* DataTransferTests.swift */; };
 		967E95ACDDA5E3556A1B0242 /* Pods_ProductCleanTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4560F8431F58FA7E95F622FD /* Pods_ProductCleanTests.framework */; };
 		FC1797A1A118746904C2B04F /* Pods_ProductCleanSnapshotTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 23986E8E2A3C9DBEDEE689CF /* Pods_ProductCleanSnapshotTests.framework */; };
 /* End PBXBuildFile section */
@@ -122,7 +127,6 @@
 		6D15AB622B84E7FA00481F94 /* ProductDataListDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDataListDTO.swift; sourceTree = "<group>"; };
 		6D15AB652B84E96E00481F94 /* ProductDomainListDTO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductDomainListDTO.swift; sourceTree = "<group>"; };
 		6D15AB672B84EEF800481F94 /* ProductListRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListRepository.swift; sourceTree = "<group>"; };
-		6D15AB692B84EFA700481F94 /* ProductListService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListService.swift; sourceTree = "<group>"; };
 		6D15AB6B2B85007000481F94 /* NetworkRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRequest.swift; sourceTree = "<group>"; };
 		6D15AB6D2B8501CF00481F94 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 		6D15AB6F2B85060500481F94 /* URLRequestCreater.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLRequestCreater.swift; sourceTree = "<group>"; };
@@ -161,6 +165,12 @@
 		6DE38BDC2B877E99008498A3 /* NetworkSessionManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkSessionManagerTests.swift; sourceTree = "<group>"; };
 		6DE38BE02B87A266008498A3 /* ProductListView_Previews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListView_Previews.swift; sourceTree = "<group>"; };
 		6DE38BE22B87D98C008498A3 /* SpashotTestWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpashotTestWrapper.swift; sourceTree = "<group>"; };
+		6DE38BE42B8B33EB008498A3 /* NetworkConfig.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkConfig.swift; sourceTree = "<group>"; };
+		6DE38BE62B8B3739008498A3 /* DataTransferService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataTransferService.swift; sourceTree = "<group>"; };
+		6DE38BE92B8B854E008498A3 /* ProductListService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductListService.swift; sourceTree = "<group>"; };
+		6DE38BEB2B8B8613008498A3 /* APIEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIEndpoint.swift; sourceTree = "<group>"; };
+		6DE38BED2B8B8AD5008498A3 /* MockDataTransferService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockDataTransferService.swift; sourceTree = "<group>"; };
+		6DE38BEF2B8B9C4E008498A3 /* DataTransferTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataTransferTests.swift; sourceTree = "<group>"; };
 		AA6768028B48472586D00866 /* Pods-ProductCleanSnapshotTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProductCleanSnapshotTests.debug.xcconfig"; path = "Target Support Files/Pods-ProductCleanSnapshotTests/Pods-ProductCleanSnapshotTests.debug.xcconfig"; sourceTree = "<group>"; };
 		AAD0096372E59A20C4F2379E /* Pods_ProductClean_ProductCleanUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ProductClean_ProductCleanUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC5AC825D0D9F9B8242B1172 /* Pods-ProductCleanTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProductCleanTests.release.xcconfig"; path = "Target Support Files/Pods-ProductCleanTests/Pods-ProductCleanTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -278,7 +288,9 @@
 				6DE38BBD2B867187008498A3 /* NetworkSessionManager.swift */,
 				6D15AB812B85E11900481F94 /* SharedURLSession.swift */,
 				6D15AB832B85E2DF00481F94 /* SharedURLSessionDelegate.swift */,
+				6DE38BE42B8B33EB008498A3 /* NetworkConfig.swift */,
 				6D15AB712B85061100481F94 /* NetworkManager.swift */,
+				6DE38BE62B8B3739008498A3 /* DataTransferService.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -307,7 +319,7 @@
 			children = (
 				6D15AB592B84DD0C00481F94 /* Entity */,
 				6D15AB602B84E7D900481F94 /* Repository */,
-				6D15AB612B84E7D900481F94 /* Services */,
+				6DE38BE82B8B854E008498A3 /* Services */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -412,14 +424,6 @@
 			path = Repository;
 			sourceTree = "<group>";
 		};
-		6D15AB612B84E7D900481F94 /* Services */ = {
-			isa = PBXGroup;
-			children = (
-				6D15AB692B84EFA700481F94 /* ProductListService.swift */,
-			);
-			path = Services;
-			sourceTree = "<group>";
-		};
 		6D15AB642B84E96E00481F94 /* Entity */ = {
 			isa = PBXGroup;
 			children = (
@@ -459,6 +463,7 @@
 				6DE38BB92B865258008498A3 /* URLRequestCreaterTests.swift */,
 				6DE38BDC2B877E99008498A3 /* NetworkSessionManagerTests.swift */,
 				6DE38BBF2B867BE2008498A3 /* NetworkManagerTests.swift */,
+				6DE38BEF2B8B9C4E008498A3 /* DataTransferTests.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -475,7 +480,7 @@
 			isa = PBXGroup;
 			children = (
 				6DE38BC12B867E52008498A3 /* MockData.swift */,
-				6DE38BC42B869723008498A3 /* MockNetworkManager.swift */,
+				6DE38BED2B8B8AD5008498A3 /* MockDataTransferService.swift */,
 				6DE38BC82B869BDB008498A3 /* MockProductListService.swift */,
 				6DE38BCC2B869FDA008498A3 /* MockProductListRepository.swift */,
 				6DE38BD02B86A1F9008498A3 /* MockProductListUseCase.swift */,
@@ -488,6 +493,7 @@
 			children = (
 				6DE38BB72B865176008498A3 /* MockNetworkRequest.swift */,
 				6DE38BBB2B865FED008498A3 /* MockNetworkSessionManager.swift */,
+				6DE38BC42B869723008498A3 /* MockNetworkManager.swift */,
 			);
 			path = Mock;
 			sourceTree = "<group>";
@@ -519,6 +525,15 @@
 				6DE38BDA2B874D57008498A3 /* ProductListRepositoryProtocol.swift */,
 			);
 			path = Repository;
+			sourceTree = "<group>";
+		};
+		6DE38BE82B8B854E008498A3 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				6DE38BE92B8B854E008498A3 /* ProductListService.swift */,
+				6DE38BEB2B8B8613008498A3 /* APIEndpoint.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 		80B75C0BC5EA0E6022382673 /* Frameworks */ = {
@@ -883,7 +898,9 @@
 				6D15AB512B84B8DC00481F94 /* ProductItemView.swift in Sources */,
 				6DE38BE12B87A266008498A3 /* ProductListView_Previews.swift in Sources */,
 				6D15AB822B85E11900481F94 /* SharedURLSession.swift in Sources */,
+				6DE38BE52B8B33EC008498A3 /* NetworkConfig.swift in Sources */,
 				6D15AB6C2B85007000481F94 /* NetworkRequest.swift in Sources */,
+				6DE38BEA2B8B854E008498A3 /* ProductListService.swift in Sources */,
 				6D15AB7C2B85CC5E00481F94 /* ProductDetailsView.swift in Sources */,
 				6D15AB842B85E2DF00481F94 /* SharedURLSessionDelegate.swift in Sources */,
 				6D15AB452B847BE500481F94 /* AppDIContainer.swift in Sources */,
@@ -897,10 +914,11 @@
 				6D15AB532B84BAA700481F94 /* ProductListLayout.swift in Sources */,
 				6DE38BD52B873164008498A3 /* Constants.swift in Sources */,
 				6D15AB5B2B84DD1900481F94 /* ProductListUseCase.swift in Sources */,
-				6D15AB6A2B84EFA700481F94 /* ProductListService.swift in Sources */,
 				6D15AB682B84EEF800481F94 /* ProductListRepository.swift in Sources */,
+				6DE38BE72B8B3739008498A3 /* DataTransferService.swift in Sources */,
 				6D15AB632B84E7FA00481F94 /* ProductDataListDTO.swift in Sources */,
 				6D15AB662B84E96E00481F94 /* ProductDomainListDTO.swift in Sources */,
+				6DE38BEC2B8B8613008498A3 /* APIEndpoint.swift in Sources */,
 				6D15AB472B848BD500481F94 /* ProductListViewModel.swift in Sources */,
 				6D15AB3D2B84783100481F94 /* ProductCleanApp.swift in Sources */,
 				6D15AB702B85060500481F94 /* URLRequestCreater.swift in Sources */,
@@ -915,12 +933,14 @@
 				6DE38BC02B867BE2008498A3 /* NetworkManagerTests.swift in Sources */,
 				6DE38BBC2B865FEE008498A3 /* MockNetworkSessionManager.swift in Sources */,
 				6DE38BC52B869723008498A3 /* MockNetworkManager.swift in Sources */,
+				6DE38BF02B8B9C4E008498A3 /* DataTransferTests.swift in Sources */,
 				6DE38BD12B86A1F9008498A3 /* MockProductListUseCase.swift in Sources */,
 				6DE38BCD2B869FDA008498A3 /* MockProductListRepository.swift in Sources */,
 				6DE38BCF2B86A0A7008498A3 /* ProductListUseCaseTests.swift in Sources */,
 				6DE38BD32B86A244008498A3 /* ProductListViewModelTests.swift in Sources */,
 				6DE38BCB2B869D92008498A3 /* ProductListRepositoryTest.swift in Sources */,
 				6DE38BBA2B865258008498A3 /* URLRequestCreaterTests.swift in Sources */,
+				6DE38BEE2B8B8AD5008498A3 /* MockDataTransferService.swift in Sources */,
 				6DE38BC72B869960008498A3 /* ProductListServiceTests.swift in Sources */,
 				6DE38BB82B865176008498A3 /* MockNetworkRequest.swift in Sources */,
 				6DE38BC22B867E52008498A3 /* MockData.swift in Sources */,

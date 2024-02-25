@@ -8,28 +8,40 @@
 import Foundation
 
 protocol URLRequestGenerator {
-    func generateURLRequest(from request: NetworkRequest) throws -> URLRequest
+    func generateURLRequest(with config: NetworkConfigurable, from request: NetworkRequest) throws -> URLRequest
 }
 
 final class DefaultURLRequestGenerator: URLRequestGenerator {
-    func generateURLRequest(from request: NetworkRequest) throws -> URLRequest {
-        let url = try createURL(with: request)
+    
+    /// Method to create URLRequest
+    /// - Parameters:
+    ///   - config: Network Config
+    ///   - request: Network Request
+    /// - Returns: URLRequest
+    func generateURLRequest(with config: NetworkConfigurable, from request: NetworkRequest) throws -> URLRequest {
+        let url = try createURL(with: config, from: request)
         var urlRequest = URLRequest(url: url, cachePolicy: .useProtocolCachePolicy, timeoutInterval: 10)
-        urlRequest.httpMethod = HTTPMethod.get.rawValue
+        urlRequest.httpMethod = request.method.rawValue
         if !request.bodyParameters.isEmpty {
             let bodyData = try? JSONSerialization.data(withJSONObject: request.bodyParameters,
                                                        options: [.prettyPrinted])
             urlRequest.httpBody = bodyData
         }
-        request.headerParameters.forEach { key, value in
+        config.headers.forEach { key, value in
             urlRequest.setValue(value, forHTTPHeaderField: key)
         }
         return urlRequest
     }
-    private func createURL(with request: NetworkRequest) throws -> URL {
+    
+    /// Method to ceate URL
+    /// - Parameters:
+    ///   - config: Network Config
+    ///   - request: Network Request
+    /// - Returns: URL
+    private func createURL(with config: NetworkConfigurable, from request: NetworkRequest) throws -> URL {
         var components = URLComponents()
         components.scheme = "https"
-        components.host = AppConfiguration.baseURL
+        components.host = config.baseURL
         components.path = request.path
         components.queryItems = request.queryParameters.map { URLQueryItem(name: $0, value: "\($1)") }
         guard let url = components.url else { throw NetworkError.badURL }

@@ -24,7 +24,7 @@ final class URLRequestCreaterTests: XCTestCase {
     
     func testURLRequest() {
         do {
-            let urlRequest = try requestGenerator.generateURLRequest(from: MockNetworkRequest())
+            let urlRequest = try requestGenerator.generateURLRequest(with: MockApiDataNetworkConfig(), from: MockNetworkRequest())
             XCTAssertEqual(urlRequest.url?.host, "dummyjson.com")
             XCTAssertEqual(urlRequest.url?.scheme, "https")
             XCTAssertEqual(urlRequest.url?.path, "/products")

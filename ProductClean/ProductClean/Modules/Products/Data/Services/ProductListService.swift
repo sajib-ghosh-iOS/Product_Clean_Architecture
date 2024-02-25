@@ -12,12 +12,12 @@ protocol ProductListService {
 }
 
 final class DefaultProductListService: ProductListService {
-    private let netoworkManager: NetworkManager
-    init(netoworkManager: NetworkManager) {
-        self.netoworkManager = netoworkManager
+    private let apiDataService: DataTransferService
+    init(apiDataService: DataTransferService) {
+        self.apiDataService = apiDataService
     }
     func fetchProductListFromNetwork() async throws -> ProductPageDataListDTO {
-        let networkRequest = DefaultNetworkRequest(path: APIPathConstant.products)
-        return try await netoworkManager.fetch(request: networkRequest)
+        let productListNetworkRequest = DefaultNetworkRequest(path: APIEndpoint.products)
+        return try await apiDataService.request(request: productListNetworkRequest)
     }
 }

@@ -10,28 +10,28 @@ import XCTest
 class PostServiceTests: XCTestCase {
 
     var productService: ProductListService!
-    var mockNetworkManager: MockNetworkManager!
+    var mockDataTransferService: MockDataTransferService!
 
     override func setUp() {
         super.setUp()
-        mockNetworkManager = MockNetworkManager()
-        productService = DefaultProductListService(netoworkManager: mockNetworkManager)
+        mockDataTransferService = MockDataTransferService()
+        productService = DefaultProductListService(apiDataService: mockDataTransferService)
     }
     
     override func tearDown() {
         productService = nil
-        mockNetworkManager = nil
+        mockDataTransferService = nil
         super.tearDown()
     }
     
     func testProductServiceSuccess() async throws {
-        mockNetworkManager.response = MockData.productPage
-        let data = try await productService.fetchProductListFromNetwork()
-        XCTAssertNotNil(data)
+        mockDataTransferService.response = MockData.productPage
+        let productPage = try await productService.fetchProductListFromNetwork()
+        XCTAssertEqual(productPage.products.count, 5)
     }
 
     func testProductServiceFailure() async throws {
-        mockNetworkManager.error = NSError(domain: "FailedError", code: 0)
+        mockDataTransferService.error = NSError(domain: "FailedError", code: 0)
         do {
             _ = try await productService.fetchProductListFromNetwork()
             XCTFail("Success not expected")

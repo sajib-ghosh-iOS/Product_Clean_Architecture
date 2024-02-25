@@ -15,3 +15,8 @@ class MockNetworkRequest: NetworkRequest {
     var queryParameters: [String : Any] = [:]
     var bodyParameters: [String : Any] = [:]
 }
+
+class MockApiDataNetworkConfig: NetworkConfigurable {
+    var baseURL: String = "dummyjson.com"
+    var headers: [String : String] = ["Content-Type":"application/json"]
+}

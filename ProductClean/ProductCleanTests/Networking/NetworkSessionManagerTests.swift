@@ -23,18 +23,22 @@ final class NetworkSessionManagerTests: XCTestCase {
     }
     
     func testRequestSuccessResponse() async throws {
-        let urlRequest = URLRequest(url: URL(string: "https://dummyjson.com/products")!)
-        let (data,response) = try await networkSessionManger.data(urlRequest)
+        let config = ApiDataNetworkConfig(baseURL: "dummyjson.com")
+        let request = DefaultNetworkRequest(path: "/products")
+        let (data,response) = try await networkSessionManger.request(with: config, request: request)
         XCTAssertNotNil(data)
         XCTAssertNotNil(response)
     }
     
-    func testInvalidRequestFailure() async throws {
-        let urlRequest = URLRequest(url: URL(string: "https://dummyjson.com/products/zzzzzz")!)
+    
+    func testBadURLFailure() async throws {
+        let config = ApiDataNetworkConfig(baseURL: "Bad URL")
+        let request = DefaultNetworkRequest(path: "invalid")
         do {
-            let _ = try await networkSessionManger.data(urlRequest)
+            let _ = try await networkSessionManger.request(with: config, request: request)
+            XCTFail("Should not succeed")
         } catch {
-            XCTAssertEqual(error as! NetworkError, NetworkError.badRequest)
+            XCTAssertEqual(error as! NetworkError, NetworkError.invalidRequest)
         }
     }
 }

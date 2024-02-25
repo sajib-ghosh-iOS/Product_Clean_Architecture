@@ -13,7 +13,7 @@ class MockNetworkSessionManager: NetworkSessionManager {
     var response: URLResponse?
     var error: Error?
     
-    func data(_ request: URLRequest) async throws -> (Data?, URLResponse?) {
+    func request(with config: NetworkConfigurable, request: NetworkRequest) async throws -> (Data?, URLResponse?) {
         if let error = self.error {
             throw error
         }

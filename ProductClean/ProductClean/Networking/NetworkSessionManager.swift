@@ -9,13 +9,25 @@ import Foundation
 
 
 final class DefaultNetworkSessionManager: NetworkSessionManager {
+
     private let session: URLSession
-    init(session: URLSession = .shared) {
+    private let requestGenerator: URLRequestGenerator
+    init(session: URLSession = .shared,
+         requestGenerator: URLRequestGenerator = DefaultURLRequestGenerator()
+    ) {
         self.session = session
+        self.requestGenerator = requestGenerator
     }
-    func data(_ request: URLRequest) async throws -> (Data?, URLResponse?) {
+    
+    /// Method to get data and response from URLSession
+    /// - Parameters:
+    ///   - config: Network config
+    ///   - request: Network request
+    /// - Returns: Data and Response
+    func request(with config: NetworkConfigurable, request: NetworkRequest) async throws -> (Data?, URLResponse?) {
+        guard let urlRequest = try? requestGenerator.generateURLRequest(with: config, from: request) else { throw NetworkError.invalidRequest }
         do {
-            return try await session.data(for: request)
+            return try await session.data(for: urlRequest)
         } catch {
             throw NetworkError.badRequest
         }

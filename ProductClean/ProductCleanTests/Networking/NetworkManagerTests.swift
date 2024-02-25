@@ -14,11 +14,11 @@ final class NetworkManagerTests: XCTestCase {
     var sessionManager: MockNetworkSessionManager!
     
     var response = HTTPURLResponse(url: URL(string: "/products")!, statusCode: 200, httpVersion: nil, headerFields: nil)
-
+    var invalidResponse = HTTPURLResponse(url: URL(string: "/zzzz")!, statusCode: 400, httpVersion: nil, headerFields: nil)
     override func setUp() {
         super.setUp()
         sessionManager = MockNetworkSessionManager()
-        networkManger = DefaultNetworkManager(sessionManager: sessionManager)
+        networkManger = DefaultNetworkManager(config: MockApiDataNetworkConfig(), sessionManager: sessionManager)
     }
 
     override func tearDown() {
@@ -31,11 +31,11 @@ final class NetworkManagerTests: XCTestCase {
         sessionManager.data = MockData.productsRawData
         sessionManager.response = response
         let request = DefaultNetworkRequest(path: "/products")
-        let productPage = try await getProductData(request: request)
-        XCTAssertEqual(productPage.products.count, 5)
+        let data = try await getProductData(request: request)
+        XCTAssertNotNil(data)
     }
     
-    func getProductData(request: NetworkRequest) async throws -> ProductPageDataListDTO {
+    func getProductData(request: NetworkRequest) async throws -> Data {
         try await networkManger.fetch(request: request)
     }
     
@@ -44,19 +44,21 @@ final class NetworkManagerTests: XCTestCase {
         let request = DefaultNetworkRequest(path: "/products")
         do {
            _ = try await getProductData(request: request)
+            XCTFail("Should not succeed")
         } catch {
             XCTAssertNotNil(error)
         }
     }
     
-    func testDecodingFailureCase() async throws {
-        sessionManager.data = Data()
-        sessionManager.response = response
+    func testRequestFailedResponseCase() async throws {
+        sessionManager.data = MockData.productsRawData
+        sessionManager.response = invalidResponse
         let request = DefaultNetworkRequest(path: "/products")
         do {
            _ = try await getProductData(request: request)
+            XCTFail("Should not succeed")
         } catch {
-            XCTAssertEqual(error as! NetworkError, NetworkError.unableToDecode)
+            XCTAssertEqual(error as! NetworkError, NetworkError.failed)
         }
     }
     
@@ -65,17 +67,9 @@ final class NetworkManagerTests: XCTestCase {
         let request = DefaultNetworkRequest(path: "/products")
         do {
            _ = try await getProductData(request: request)
+            XCTFail("Should not succeed")
         } catch {
             XCTAssertEqual(error as! NetworkError, NetworkError.noResponse)
-        }
-    }
-    
-    func testInvalidRequestFailure() async throws {
-        let request = DefaultNetworkRequest(path: "Invalid")
-        do {
-            let _ = try await getProductData(request: request)
-        } catch {
-            XCTAssertEqual(error as! NetworkError, NetworkError.invalidRequest)
         }
     }
 }

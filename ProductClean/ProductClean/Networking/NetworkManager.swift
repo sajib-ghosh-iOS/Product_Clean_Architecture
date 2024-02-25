@@ -8,35 +8,29 @@
 import Foundation
 
 protocol NetworkSessionManager {
-    func data(_ request: URLRequest) async throws -> (Data?, URLResponse?)
+    func request(with config: NetworkConfigurable, request: NetworkRequest) async throws -> (Data?, URLResponse?)
 }
 protocol NetworkManager {
-    func fetch<T: Decodable>(request: NetworkRequest) async throws -> T
+    func fetch(request: NetworkRequest) async throws -> Data
 }
 
 final class DefaultNetworkManager: NetworkManager {
+    private let config: NetworkConfigurable
     private let sessionManager: NetworkSessionManager
-    private let requestGenerator: URLRequestGenerator
-    init(sessionManager: NetworkSessionManager = DefaultNetworkSessionManager(),
-         requestGenerator: URLRequestGenerator = DefaultURLRequestGenerator()) {
+    init(config: NetworkConfigurable,
+        sessionManager: NetworkSessionManager = DefaultNetworkSessionManager()) {
+        self.config = config
         self.sessionManager = sessionManager
-        self.requestGenerator = requestGenerator
     }
-    func fetch<T>(request: NetworkRequest) async throws -> T where T: Decodable {
-        guard let urlRequest = try? requestGenerator.generateURLRequest(from: request) else { throw NetworkError.invalidRequest }
-        do {
-            let (data, response) = try await sessionManager.data(urlRequest)
-            guard let response = response as? HTTPURLResponse else { throw NetworkError.noResponse }
-            if response.statusCode != 200 { throw NetworkError.failed }
-            guard let data = data else { throw NetworkError.noData }
-            do {
-                let decodedData = try JSONDecoder().decode(T.self, from: data)
-                return decodedData
-            } catch {
-                throw NetworkError.unableToDecode
-            }
-        } catch {
-            throw error
-        }
+    
+    /// Method to fetch data from Session Manager and validates the data and response
+    /// - Parameter request: Network Request
+    /// - Returns: Data
+    func fetch(request: NetworkRequest) async throws -> Data {
+        let (data, response) = try await sessionManager.request(with: config, request: request)
+        guard let response = response as? HTTPURLResponse else { throw NetworkError.noResponse }
+        if response.statusCode != 200 { throw NetworkError.failed }
+        guard let data = data else { throw NetworkError.noData }
+        return data
     }
 }

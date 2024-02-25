@@ -4,16 +4,16 @@
 //
 //  Created by Sajib Ghosh on 22/02/24.
 //
-
+import Foundation
 @testable import ProductClean
 
 class MockNetworkManager: NetworkManager {
-    var response: Decodable?
+    var data: Data?
     var error: Error?
-    func fetch<T>(request: ProductClean.NetworkRequest) async throws -> T where T: Decodable {
+    func fetch(request: NetworkRequest) async throws -> Data {
         if let error {
             throw error
         }
-        return response as! T
+        return data!
     }
 }
