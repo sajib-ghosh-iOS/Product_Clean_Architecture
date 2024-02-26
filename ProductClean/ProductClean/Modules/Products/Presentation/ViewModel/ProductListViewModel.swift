@@ -54,7 +54,7 @@ final class ProductListViewModel: ProductListViewModelProtocol {
         products.map { ProductListItemViewModel(id: $0.productId,
                                            title: $0.title ?? "",
                                            description: $0.description ?? "",
-                                                price: $0.price?.currency ?? "",
+                                                price: $0.price?.getAmountWithCurrency() ?? "",
                                            image: $0.thumbnail ?? "") }
     }
     
@@ -62,18 +62,5 @@ final class ProductListViewModel: ProductListViewModelProtocol {
     /// - Returns: True if there the product array is empty and error is not there
     func shouldShowLoader() -> Bool {
         return (isEmpty && !isError)
-    }
-}
-
-extension Double {
-    
-    /// It converts a double amount to a string with currency
-    /// For example double value -> 100, return value -> "$100"
-    var currency: String {
-        let numberFormatter = NumberFormatter()
-        numberFormatter.numberStyle = .currency
-        numberFormatter.maximumFractionDigits = 0
-        numberFormatter.locale = Locale(identifier: AppConstant.currencyIndentifier)
-        return numberFormatter.string(from: NSNumber(value: self)) ?? ""
     }
 }
