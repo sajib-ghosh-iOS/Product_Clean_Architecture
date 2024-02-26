@@ -7,7 +7,7 @@
 
 import Foundation
 
-protocol ProductListViewModelOutput: ObservableObject {
+protocol ProductListViewModelOutputProtocol: ObservableObject {
     var products: [ProductListItemViewModel] {get set}
     var isError: Bool {get}
     var error: String {get}
@@ -15,13 +15,13 @@ protocol ProductListViewModelOutput: ObservableObject {
     func shouldShowLoader() -> Bool
 }
 
-protocol ProductListViewModelInput {
+protocol ProductListViewModelInputProtocol {
     func fetchProducts() async
 }
 
-typealias ProductListViewModel = ProductListViewModelInput & ProductListViewModelOutput
+typealias ProductListViewModelProtocol = ProductListViewModelInputProtocol & ProductListViewModelOutputProtocol
 
-final class DefaultProductListViewModel: ProductListViewModel {
+final class ProductListViewModel: ProductListViewModelProtocol {
     @Published var products: [ProductListItemViewModel] = []
     @Published var isError: Bool = false
     @Published var error: String = ""

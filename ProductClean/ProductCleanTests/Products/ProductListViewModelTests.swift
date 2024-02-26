@@ -10,13 +10,13 @@ import XCTest
 
 class ProductListViewModelTest: XCTestCase {
     
-    var productListViewModel: DefaultProductListViewModel!
+    var productListViewModel: ProductListViewModel!
     var mockProductUseCase: MockProductListUseCase!
     
     override func setUp() async throws {
         try await super.setUp()
         mockProductUseCase = MockProductListUseCase()
-        productListViewModel = DefaultProductListViewModel(useCase: mockProductUseCase)
+        productListViewModel = ProductListViewModel(useCase: mockProductUseCase)
     }
     
     override func tearDown() {

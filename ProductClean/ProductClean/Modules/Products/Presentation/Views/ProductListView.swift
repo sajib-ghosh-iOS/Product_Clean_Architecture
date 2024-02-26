@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ProductListView<ViewModel>: View where ViewModel: ProductListViewModel {
+struct ProductListView<ViewModel>: View where ViewModel: ProductListViewModelProtocol {
     @ObservedObject private var viewModel: ViewModel
     init(viewModel: ViewModel) {
         self.viewModel = viewModel

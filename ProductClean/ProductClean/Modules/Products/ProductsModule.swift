@@ -13,12 +13,12 @@ class ProductsModule {
         self.apiDataTransferService = apiDataTransferService
     }
     
-    func generateProductListView() -> ProductListView<DefaultProductListViewModel> {
+    func generateProductListView() -> ProductListView<ProductListViewModel> {
         ProductListView(viewModel: generateProductListViewModel())
     }
     
-    private func generateProductListViewModel() -> DefaultProductListViewModel {
-        DefaultProductListViewModel(useCase: generateProductListUseCase())
+    private func generateProductListViewModel() -> ProductListViewModel {
+        ProductListViewModel(useCase: generateProductListUseCase())
     }
     
     private func generateProductListUseCase() -> ProductListUseCase {
