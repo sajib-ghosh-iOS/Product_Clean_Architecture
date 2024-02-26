@@ -48,7 +48,7 @@ final class DefaultProductListViewModel: ProductListViewModel {
     }
     
     /// This method maps Product to ProductListItemViewModel
-    /// - Parameter products:Product
+    /// - Parameter products:array of Product
     /// - Returns: array of ProductListItemViewModel
     private func transformFetchedProducts(products: [Product]) -> [ProductListItemViewModel] {
         products.map { ProductListItemViewModel(id: $0.productId,
@@ -58,7 +58,7 @@ final class DefaultProductListViewModel: ProductListViewModel {
                                            image: $0.thumbnail ?? "") }
     }
     
-    /// This method check if the loader should be shown or not
+    /// This method checks if the loader should be shown or not
     /// - Returns: True if there the product array is empty and error is not there
     func shouldShowLoader() -> Bool {
         return (isEmpty && !isError)

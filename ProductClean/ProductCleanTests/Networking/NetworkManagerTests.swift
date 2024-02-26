@@ -30,7 +30,7 @@ final class NetworkManagerTests: XCTestCase {
     func testRequestSuccessResponse() async throws {
         sessionManager.data = MockData.productsRawData
         sessionManager.response = response
-        let request = DefaultNetworkRequest(path: "/products")
+        let request = MockNetworkRequest()
         let data = try await getProductData(request: request)
         XCTAssertNotNil(data)
     }
@@ -41,7 +41,7 @@ final class NetworkManagerTests: XCTestCase {
     
     func testRequestFailureCase() async throws {
         sessionManager.error = NSError(domain: "Failed", code: 0)
-        let request = DefaultNetworkRequest(path: "/products")
+        let request = MockNetworkRequest()
         do {
            _ = try await getProductData(request: request)
             XCTFail("Should not succeed")
@@ -53,7 +53,7 @@ final class NetworkManagerTests: XCTestCase {
     func testRequestFailedResponseCase() async throws {
         sessionManager.data = MockData.productsRawData
         sessionManager.response = invalidResponse
-        let request = DefaultNetworkRequest(path: "/products")
+        let request = MockNetworkRequest()
         do {
            _ = try await getProductData(request: request)
             XCTFail("Should not succeed")
@@ -64,7 +64,7 @@ final class NetworkManagerTests: XCTestCase {
     
     func testEmptyResponseFailureCase() async throws {
         sessionManager.data = MockData.productsRawData
-        let request = DefaultNetworkRequest(path: "/products")
+        let request = MockNetworkRequest()
         do {
            _ = try await getProductData(request: request)
             XCTFail("Should not succeed")

@@ -17,7 +17,7 @@ final class DefaultProductListService: ProductListService {
         self.apiDataService = apiDataService
     }
     func fetchProductListFromNetwork() async throws -> ProductPageDataListDTO {
-        let productListNetworkRequest = DefaultNetworkRequest(path: APIEndpoint.products)
+        let productListNetworkRequest = DefaultNetworkRequest(path: APIEndpoint.products,method: .get)
         return try await apiDataService.request(request: productListNetworkRequest)
     }
 }

@@ -23,15 +23,15 @@ final class NetworkSessionManagerTests: XCTestCase {
     }
     
     func testRequestSuccessResponse() async throws {
-        let config = ApiDataNetworkConfig(baseURL: "dummyjson.com")
-        let request = DefaultNetworkRequest(path: "/products")
+        let config = MockApiDataNetworkConfig()
+        let request = MockNetworkRequest()
         let (data,response) = try await networkSessionManger.request(with: config, request: request)
         XCTAssertNotNil(data)
         XCTAssertNotNil(response)
     }
     
     
-    func testBadURLFailure() async throws {
+    func testInvalidRequestFailure() async throws {
         let config = ApiDataNetworkConfig(baseURL: "Bad URL")
         let request = DefaultNetworkRequest(path: "invalid")
         do {

@@ -284,11 +284,11 @@
 			children = (
 				6D15AB6B2B85007000481F94 /* NetworkRequest.swift */,
 				6D15AB6D2B8501CF00481F94 /* NetworkError.swift */,
-				6D15AB6F2B85060500481F94 /* URLRequestCreater.swift */,
-				6DE38BBD2B867187008498A3 /* NetworkSessionManager.swift */,
+				6DE38BE42B8B33EB008498A3 /* NetworkConfig.swift */,
 				6D15AB812B85E11900481F94 /* SharedURLSession.swift */,
 				6D15AB832B85E2DF00481F94 /* SharedURLSessionDelegate.swift */,
-				6DE38BE42B8B33EB008498A3 /* NetworkConfig.swift */,
+				6D15AB6F2B85060500481F94 /* URLRequestCreater.swift */,
+				6DE38BBD2B867187008498A3 /* NetworkSessionManager.swift */,
 				6D15AB712B85061100481F94 /* NetworkManager.swift */,
 				6DE38BE62B8B3739008498A3 /* DataTransferService.swift */,
 			);
@@ -358,8 +358,8 @@
 			children = (
 				6D15AB422B847BB700481F94 /* ProductListView.swift */,
 				6DE38BE02B87A266008498A3 /* ProductListView_Previews.swift */,
-				6D15AB502B84B8DC00481F94 /* ProductItemView.swift */,
 				6D15AB522B84BAA700481F94 /* ProductListLayout.swift */,
+				6D15AB502B84B8DC00481F94 /* ProductItemView.swift */,
 				6D15AB7B2B85CC5E00481F94 /* ProductDetailsView.swift */,
 				6D15AB4E2B84B81600481F94 /* HeaderImageView.swift */,
 				6D15AB562B84CFC200481F94 /* ErrorView.swift */,
