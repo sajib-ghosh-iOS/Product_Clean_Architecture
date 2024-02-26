@@ -31,14 +31,25 @@ final class NetworkSessionManagerTests: XCTestCase {
     }
     
     
-    func testInvalidRequestFailure() async throws {
+    func testBadURLFailure() async throws {
         let config = ApiDataNetworkConfig(baseURL: "Bad URL")
         let request = DefaultNetworkRequest(path: "invalid")
         do {
             let _ = try await networkSessionManger.request(with: config, request: request)
             XCTFail("Should not succeed")
         } catch {
-            XCTAssertEqual(error as! NetworkError, NetworkError.invalidRequest)
+            XCTAssertEqual(error as! NetworkError, NetworkError.badURL)
+        }
+    }
+    
+    func testBadRequestFailure() async throws {
+        let config = ApiDataNetworkConfig(baseURL: "kdlskdls")
+        let request = DefaultNetworkRequest(path: "/zzzzz")
+        do {
+            let _ = try await networkSessionManger.request(with: config, request: request)
+            XCTFail("Should not succeed")
+        } catch {
+            XCTAssertEqual(error as! NetworkError, NetworkError.badRequest)
         }
     }
 }
