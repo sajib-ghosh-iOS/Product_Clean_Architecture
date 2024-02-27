@@ -5,9 +5,9 @@ This project is built using Clean architecture with MVVM. SwiftUI has been used 
 
 ## Screenshots
 
-![ProductList](https://github.com/sajib-ghoshInnofied/Product_Clean_Architecture/assets/15829311/cad6d8f7-ca0f-40bf-9078-32a87fd4559e)
+<img width="350" height="600" alt="ProductList" src="https://github.com/sajib-ghoshInnofied/Product_Clean_Architecture/assets/15829311/cad6d8f7-ca0f-40bf-9078-32a87fd4559e">
 
-![ProductDetails](https://github.com/sajib-ghoshInnofied/Product_Clean_Architecture/assets/15829311/be8ba947-d17e-4f10-83c6-876593be0b07)
+<img width="350" height="600" alt="ProductDetails" src="https://github.com/sajib-ghoshInnofied/Product_Clean_Architecture/assets/15829311/be8ba947-d17e-4f10-83c6-876593be0b07">
 
 ## Test Coverage
 
