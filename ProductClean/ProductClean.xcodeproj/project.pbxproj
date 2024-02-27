@@ -177,7 +177,7 @@
 		6DE38BF22B8CF49D008498A3 /* Double+CurrencyAmount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+CurrencyAmount.swift"; sourceTree = "<group>"; };
 		6DE38BF42B8DB952008498A3 /* MockURLSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockURLSession.swift; sourceTree = "<group>"; };
 		6DE38BF82B8DC73F008498A3 /* URLSession+AsyncData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLSession+AsyncData.swift"; sourceTree = "<group>"; };
-		6DE38BFA2B8DCC17008498A3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		6DE38BFA2B8DCC17008498A3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AA6768028B48472586D00866 /* Pods-ProductCleanSnapshotTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProductCleanSnapshotTests.debug.xcconfig"; path = "Target Support Files/Pods-ProductCleanSnapshotTests/Pods-ProductCleanSnapshotTests.debug.xcconfig"; sourceTree = "<group>"; };
 		AAD0096372E59A20C4F2379E /* Pods_ProductClean_ProductCleanUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ProductClean_ProductCleanUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC5AC825D0D9F9B8242B1172 /* Pods-ProductCleanTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProductCleanTests.release.xcconfig"; path = "Target Support Files/Pods-ProductCleanTests/Pods-ProductCleanTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -248,7 +248,6 @@
 		6D15AAFB2B84750800481F94 /* ProductClean */ = {
 			isa = PBXGroup;
 			children = (
-				6DE38BFA2B8DCC17008498A3 /* Info.plist */,
 				6D15AB272B84783100481F94 /* Application */,
 				6D15AB2A2B84783100481F94 /* Modules */,
 				6D15AB292B84783100481F94 /* Networking */,
@@ -387,6 +386,7 @@
 		6D15AB392B84783100481F94 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				6DE38BFA2B8DCC17008498A3 /* Info.plist */,
 				6D15AB3A2B84783100481F94 /* Assets.xcassets */,
 				6D15AB3B2B84783100481F94 /* Preview Content */,
 			);
@@ -1164,7 +1164,7 @@
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = ProductClean/Info.plist;
+				INFOPLIST_FILE = ProductClean/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -1195,7 +1195,7 @@
 				ENABLE_PREVIEWS = YES;
 				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = ProductClean/Info.plist;
+				INFOPLIST_FILE = ProductClean/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
