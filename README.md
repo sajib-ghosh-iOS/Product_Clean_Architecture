@@ -19,4 +19,11 @@ More than 85% test cases have been covered.
 ### Snapshot Tests
 All the views have been covered in snapshot tests.
 
-Please use **iPhone 15** simulator/device to run snapshot tests.
+I have included snapshot tests for **iPhone SE (3rd Gen) 16.0 and 17.2** simulator/device. If this device (iPhone SE 3rd Gen) with any of the mentioned iOS versions (16.0 or 17.2) is available, please run the test, it should succeed.
+
+Otherwise, if the above mentioned device with mentioned version is not available, please follow the below steps to run the Snapshot tests.
+1. Go to the class **SpashotTestWrapper** and **uncomment** the line ```recordMode = true```
+2. Run the test - CMD + U
+3. After running for the first you should get errors in the Snanpshots test cases, please check the errors
+4. Go to the class **SpashotTestWrapper** and **comment** the line ```recordMode = true```
+5. Run the test again, now all the snapshot tests should run succesfully.
