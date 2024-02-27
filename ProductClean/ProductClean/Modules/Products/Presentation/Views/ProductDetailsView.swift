@@ -23,7 +23,6 @@ struct ProductDetailsView: View {
             .padding(10)
             .navigationTitle(AppConstant.productDetailsTitle)
             .navigationBarTitleDisplayMode(.inline)
-            .scrollBounceBehavior(.basedOnSize)
         }.preferredColorScheme(.light)
     }
 }

@@ -37,6 +37,7 @@ final class ProductListViewModel: ProductListViewModelProtocol {
         do {
             let productList = try await productListUseCase.fetchProductList()
             self.products = self.transformFetchedProducts(products: productList)
+            self.isError = false
         } catch {
             self.isError = true
             if let networkError = error as? NetworkError {

@@ -13,14 +13,25 @@ struct ErrorView: View {
     let retryAction: () -> Void
     var body: some View {
         VStack {
-            ContentUnavailableView(errorTitle,
-                                   systemImage: AppConstant.errorImage,
-                                   description: Text(errorDescription))
-            .frame(height: 200)
+            Image(systemName: AppConstant.errorImage)
+                .foregroundColor(.gray)
+                .padding(5)
+            Text(errorTitle)
+                .font(.title)
+                .bold()
+                .multilineTextAlignment(.center)
+                .padding(5)
+            Text(errorDescription)
+                .font(.caption)
+                .multilineTextAlignment(.center)
+                .foregroundColor(.gray)
+                .padding(5)
             Button(AppConstant.retry) {
                 retryAction()
             }
+            .bold()
         }
+        .padding(50)
         .animation(.easeInOut, value: 0.5)
         .preferredColorScheme(.light)
     }
