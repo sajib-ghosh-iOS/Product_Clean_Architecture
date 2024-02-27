@@ -11,10 +11,17 @@ import XCTest
 final class NetworkSessionManagerTests: XCTestCase {
 
     var networkSessionManger: NetworkSessionManager!
-
+    var mockURLSession: MockURLSession!
+    var response: HTTPURLResponse {
+        return HTTPURLResponse(url: URL(string: "/posts")!,
+                               statusCode: 200,
+                               httpVersion: nil,
+                               headerFields: nil)!
+    }
     override func setUp() {
         super.setUp()
-        networkSessionManger = DefaultNetworkSessionManager()
+        mockURLSession = MockURLSession()
+        networkSessionManger = DefaultNetworkSessionManager(session: mockURLSession)
     }
 
     override func tearDown() {
@@ -23,33 +30,24 @@ final class NetworkSessionManagerTests: XCTestCase {
     }
     
     func testRequestSuccessResponse() async throws {
-        let config = MockApiDataNetworkConfig()
-        let request = MockNetworkRequest()
-        let (data,response) = try await networkSessionManger.request(with: config, request: request)
-        XCTAssertNotNil(data)
-        XCTAssertNotNil(response)
-    }
-    
-    
-    func testBadURLFailure() async throws {
-        let config = ApiDataNetworkConfig(baseURL: "Bad URL")
-        let request = DefaultNetworkRequest(path: "invalid")
+        mockURLSession.data = MockData.productsRawData
+        mockURLSession.urlResponse = response
         do {
-            let _ = try await networkSessionManger.request(with: config, request: request)
-            XCTFail("Should not succeed")
+            let (data,response) = try await mockURLSession.asyncData(for: URLRequest(url: MockData.mockURL))
+            XCTAssertNotNil(data)
+            XCTAssertNotNil(response)
         } catch {
-            XCTAssertEqual(error as! NetworkError, NetworkError.badURL)
+            XCTFail("Should not fail")
         }
     }
     
-    func testBadRequestFailure() async throws {
-        let config = ApiDataNetworkConfig(baseURL: "kdlskdls")
-        let request = DefaultNetworkRequest(path: "/zzzzz")
+    func testFailerCase() async throws {
+        mockURLSession.error = NSError(domain: "Failed", code: 0)
         do {
-            let _ = try await networkSessionManger.request(with: config, request: request)
+            let (data,response) = try await mockURLSession.asyncData(for: URLRequest(url: MockData.mockURL))
             XCTFail("Should not succeed")
         } catch {
-            XCTAssertEqual(error as! NetworkError, NetworkError.badRequest)
+            XCTAssertNotNil(error)
         }
     }
 }

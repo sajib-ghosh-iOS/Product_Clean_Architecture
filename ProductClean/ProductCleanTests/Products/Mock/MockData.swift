@@ -10,6 +10,7 @@ import Foundation
 
 class MockData {
 
+    static var mockURL = URL(string: "https://dummyjson.com/products")!
     static var productList: [Product] {
         return domainProducts.map { $0.toPresentation() }
     }

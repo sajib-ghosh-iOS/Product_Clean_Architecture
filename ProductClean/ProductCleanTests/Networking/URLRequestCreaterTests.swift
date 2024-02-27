@@ -36,5 +36,15 @@ final class URLRequestCreaterTests: XCTestCase {
             XCTFail("Request Failed unexpectedly")
         }
     }
-
+    
+    func testBadURLFailure() async throws {
+        let config = ApiDataNetworkConfig(baseURL: "Bad URL")
+        let request = DefaultNetworkRequest(path: "invalid")
+        do {
+            _ = try requestGenerator.generateURLRequest(with: config, from: request)
+            XCTFail("Should not succeed")
+        } catch {
+            XCTAssertEqual(error as! NetworkError, NetworkError.badURL)
+        }
+    }
 }

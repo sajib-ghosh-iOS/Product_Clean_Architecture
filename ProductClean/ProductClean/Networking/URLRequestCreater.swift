@@ -23,9 +23,13 @@ final class DefaultURLRequestGenerator: URLRequestGenerator {
         var urlRequest = URLRequest(url: url, cachePolicy: .useProtocolCachePolicy, timeoutInterval: 10)
         urlRequest.httpMethod = request.method.rawValue
         if !request.bodyParameters.isEmpty {
-            let bodyData = try? JSONSerialization.data(withJSONObject: request.bodyParameters,
-                                                       options: [.prettyPrinted])
-            urlRequest.httpBody = bodyData
+            do {
+                let bodyData = try JSONSerialization.data(withJSONObject: request.bodyParameters,
+                                                           options: [.prettyPrinted])
+                urlRequest.httpBody = bodyData
+            } catch {
+                throw error
+            }
         }
         config.headers.forEach { key, value in
             urlRequest.setValue(value, forHTTPHeaderField: key)

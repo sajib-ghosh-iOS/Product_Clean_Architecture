@@ -27,9 +27,9 @@ final class DefaultNetworkSessionManager: NetworkSessionManager {
     func request(with config: NetworkConfigurable, request: NetworkRequest) async throws -> (Data?, URLResponse?) {
         let urlRequest = try requestGenerator.generateURLRequest(with: config, from: request)
         do {
-            return try await session.data(for: urlRequest)
+            return try await session.asyncData(for: urlRequest)
         } catch {
-            throw NetworkError.badRequest
+            throw NetworkError.resolve(error: error)
         }
     }
 }
