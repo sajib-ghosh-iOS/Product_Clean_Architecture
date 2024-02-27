@@ -6,20 +6,19 @@
 //
 
 import SwiftUI
-import SDWebImageSwiftUI
+import Kingfisher
 struct HeaderImageView: View {
     let urlString: String
     let height: CGFloat
     var body: some View {
-        WebImage(url: URL(string: urlString))
-            .resizable()
+        KFImage(URL(string: urlString))
             .placeholder {
                 Rectangle().foregroundColor(.gray)
             }
-            .indicator(.activity)
+            .resizable()
             .scaledToFit()
             .frame(maxWidth: .infinity)
-            .frame(height: height)
-            .preferredColorScheme(.light)
+            .aspectRatio(120.0/63.0, contentMode: .fit)
+            .cornerRadius(4.0)
     }
 }

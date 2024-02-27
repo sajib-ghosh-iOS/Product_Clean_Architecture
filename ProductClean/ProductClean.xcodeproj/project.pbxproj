@@ -73,6 +73,7 @@
 		6DE38BF32B8CF49D008498A3 /* Double+CurrencyAmount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DE38BF22B8CF49D008498A3 /* Double+CurrencyAmount.swift */; };
 		6DE38BF52B8DB952008498A3 /* MockURLSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DE38BF42B8DB952008498A3 /* MockURLSession.swift */; };
 		6DE38BF92B8DC73F008498A3 /* URLSession+AsyncData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DE38BF82B8DC73F008498A3 /* URLSession+AsyncData.swift */; };
+		6DE38BFD2B8E0E08008498A3 /* ImageDownloadAuthenticationChallenge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DE38BFC2B8E0E08008498A3 /* ImageDownloadAuthenticationChallenge.swift */; };
 		967E95ACDDA5E3556A1B0242 /* Pods_ProductCleanTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4560F8431F58FA7E95F622FD /* Pods_ProductCleanTests.framework */; };
 		FC1797A1A118746904C2B04F /* Pods_ProductCleanSnapshotTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 23986E8E2A3C9DBEDEE689CF /* Pods_ProductCleanSnapshotTests.framework */; };
 /* End PBXBuildFile section */
@@ -178,6 +179,7 @@
 		6DE38BF42B8DB952008498A3 /* MockURLSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockURLSession.swift; sourceTree = "<group>"; };
 		6DE38BF82B8DC73F008498A3 /* URLSession+AsyncData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLSession+AsyncData.swift"; sourceTree = "<group>"; };
 		6DE38BFA2B8DCC17008498A3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6DE38BFC2B8E0E08008498A3 /* ImageDownloadAuthenticationChallenge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDownloadAuthenticationChallenge.swift; sourceTree = "<group>"; };
 		AA6768028B48472586D00866 /* Pods-ProductCleanSnapshotTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProductCleanSnapshotTests.debug.xcconfig"; path = "Target Support Files/Pods-ProductCleanSnapshotTests/Pods-ProductCleanSnapshotTests.debug.xcconfig"; sourceTree = "<group>"; };
 		AAD0096372E59A20C4F2379E /* Pods_ProductClean_ProductCleanUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ProductClean_ProductCleanUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC5AC825D0D9F9B8242B1172 /* Pods-ProductCleanTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProductCleanTests.release.xcconfig"; path = "Target Support Files/Pods-ProductCleanTests/Pods-ProductCleanTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -404,6 +406,7 @@
 		6D15AB4D2B84B77E00481F94 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				6DE38BFB2B8E0DE8008498A3 /* ImageDownloadAuthChallenge */,
 				6DE38BF12B8CEE70008498A3 /* Extensions */,
 				6DE38BD42B873164008498A3 /* Constants.swift */,
 			);
@@ -569,6 +572,14 @@
 				6DE38BF82B8DC73F008498A3 /* URLSession+AsyncData.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		6DE38BFB2B8E0DE8008498A3 /* ImageDownloadAuthChallenge */ = {
+			isa = PBXGroup;
+			children = (
+				6DE38BFC2B8E0E08008498A3 /* ImageDownloadAuthenticationChallenge.swift */,
+			);
+			path = ImageDownloadAuthChallenge;
 			sourceTree = "<group>";
 		};
 		80B75C0BC5EA0E6022382673 /* Frameworks */ = {
@@ -929,6 +940,7 @@
 				6D15AB722B85061100481F94 /* NetworkManager.swift in Sources */,
 				6D15AB762B85493100481F94 /* ProductsModule.swift in Sources */,
 				6D15AB6E2B8501CF00481F94 /* NetworkError.swift in Sources */,
+				6DE38BFD2B8E0E08008498A3 /* ImageDownloadAuthenticationChallenge.swift in Sources */,
 				6DE38BF32B8CF49D008498A3 /* Double+CurrencyAmount.swift in Sources */,
 				6D15AB492B8494C400481F94 /* ProductListItemViewModel.swift in Sources */,
 				6D15AB512B84B8DC00481F94 /* ProductItemView.swift in Sources */,

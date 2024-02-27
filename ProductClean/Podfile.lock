@@ -4,27 +4,21 @@ PODS:
   - iOSSnapshotTestCase/Core (8.0.0)
   - iOSSnapshotTestCase/SwiftSupport (8.0.0):
     - iOSSnapshotTestCase/Core
-  - SDWebImage (5.12.1):
-    - SDWebImage/Core (= 5.12.1)
-  - SDWebImage/Core (5.12.1)
-  - SDWebImageSwiftUI (2.2.6):
-    - SDWebImage (~> 5.10)
+  - Kingfisher (7.11.0)
 
 DEPENDENCIES:
   - iOSSnapshotTestCase
-  - SDWebImageSwiftUI
+  - Kingfisher (~> 7.0)
 
 SPEC REPOS:
   trunk:
     - iOSSnapshotTestCase
-    - SDWebImage
-    - SDWebImageSwiftUI
+    - Kingfisher
 
 SPEC CHECKSUMS:
   iOSSnapshotTestCase: a670511f9ee3829c2b9c23e6e68f315fd7b6790f
-  SDWebImage: 4dc3e42d9ec0c1028b960a33ac6b637bb432207b
-  SDWebImageSwiftUI: 3a8448b76833ed0e954a651be6c6f45faceed29d
+  Kingfisher: b9c985d864d43515f404f1ef4a8ce7d802ace3ac
 
-PODFILE CHECKSUM: b46e51f806acc24d15270c90f79d78fd2e9b0951
+PODFILE CHECKSUM: fd460b04a27ecd94d20ea6decd5c07a9e731dc7c
 
 COCOAPODS: 1.12.1

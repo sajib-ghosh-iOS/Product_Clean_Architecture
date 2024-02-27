@@ -1,3 +1,2 @@
 ${PODS_ROOT}/Target Support Files/Pods-ProductClean/Pods-ProductClean-frameworks.sh
-${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework
-${BUILT_PRODUCTS_DIR}/SDWebImageSwiftUI/SDWebImageSwiftUI.framework
+${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework

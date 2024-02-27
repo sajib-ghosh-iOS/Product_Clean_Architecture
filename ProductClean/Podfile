@@ -6,7 +6,7 @@ target 'ProductClean' do
   use_frameworks!
 
   # Pods for ProductClean
-	pod 'SDWebImageSwiftUI'
+  pod 'Kingfisher', '~> 7.0'
   target 'ProductCleanSnapshotTests' do
     inherit! :search_paths
     # Pods for testing
