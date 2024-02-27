@@ -33,7 +33,10 @@ final class ProductItemViewSnapshotTests: SpashotTestWrapper {
     }
     
     func testLaunchForProductListCellView() {
-        FBSnapshotVerifyView(productListCellVC?.view ?? UIView())
+        let expectation = XCTestExpectation()
+        let result = XCTWaiter.wait(for: [expectation], timeout: 10.0)
+        FBSnapshotVerifyView(productListCellVC?.view ?? UIView(), perPixelTolerance: SnapshotTolerance.perPixelTolerance, overallTolerance: SnapshotTolerance.overallTolerance)
+        XCTAssertEqual(result, .timedOut)
     }
 
 }

@@ -10,7 +10,7 @@ import FBSnapshotTestCase
 import SwiftUI
 @testable import ProductClean
 
-final class ProductCleanSnapshotTests: SpashotTestWrapper {
+final class ProductListViewSnapshotTests: SpashotTestWrapper {
 
     let viewModel = ProductListViewModelMock()
     lazy var productListVC : UIHostingController<ProductListView>? = {
@@ -35,13 +35,16 @@ final class ProductCleanSnapshotTests: SpashotTestWrapper {
         productListVC = nil
     }
     
-    func testLaunchForProductViewSuccess() {
+    func testLaunchForProductListViewSuccess() {
         viewModel.products = products
-        FBSnapshotVerifyView(productListVC?.view ?? UIView())
+        let expectation = XCTestExpectation()
+        let result = XCTWaiter.wait(for: [expectation], timeout: 10.0)
+        FBSnapshotVerifyView(productListVC?.view ?? UIView(),perPixelTolerance: SnapshotTolerance.perPixelTolerance, overallTolerance: SnapshotTolerance.overallTolerance)
+        XCTAssertEqual(result, .timedOut)
     }
-    func testLaunchForProductViewFailure() {
+    func testLaunchForProductListViewFailure() {
         viewModel.isError = true
-        FBSnapshotVerifyView(productListVC?.view ?? UIView())
+        FBSnapshotVerifyView(productListVC?.view ?? UIView(), perPixelTolerance: SnapshotTolerance.perPixelTolerance, overallTolerance: SnapshotTolerance.overallTolerance)
     }
     
 

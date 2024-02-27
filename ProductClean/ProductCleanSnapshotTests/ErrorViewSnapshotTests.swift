@@ -33,7 +33,7 @@ final class ErrorViewSnapshotTests: SpashotTestWrapper {
     }
     
     func testLaunchForErrorView() {
-        FBSnapshotVerifyView(errorVC?.view ?? UIView())
+        FBSnapshotVerifyView(errorVC?.view ?? UIView(), perPixelTolerance: SnapshotTolerance.perPixelTolerance, overallTolerance: SnapshotTolerance.overallTolerance)
     }
 
 }

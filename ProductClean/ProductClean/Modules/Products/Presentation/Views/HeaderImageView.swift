@@ -20,5 +20,6 @@ struct HeaderImageView: View {
             .frame(maxWidth: .infinity)
             .aspectRatio(120.0/63.0, contentMode: .fit)
             .cornerRadius(4.0)
+            .preferredColorScheme(.light)
     }
 }

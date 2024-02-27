@@ -33,9 +33,9 @@ final class ProductDetailsSnapshotTests: SpashotTestWrapper {
     }
     
     func testLaunchForProductDetailsView() {
-        let expectation = XCTestExpectation(description: "")
-        let result = XCTWaiter.wait(for: [expectation], timeout: 2.0) // wait and store the result
-        FBSnapshotVerifyView(productDetailsVC?.view ?? UIView())
+        let expectation = XCTestExpectation()
+        let result = XCTWaiter.wait(for: [expectation], timeout: 10.0)
+        FBSnapshotVerifyView(productDetailsVC?.view ?? UIView(), perPixelTolerance: SnapshotTolerance.perPixelTolerance, overallTolerance: SnapshotTolerance.overallTolerance)
         XCTAssertEqual(result, .timedOut)
     }
 

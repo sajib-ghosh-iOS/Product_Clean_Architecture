@@ -11,6 +11,7 @@ import FBSnapshotTestCase
 class SpashotTestWrapper: FBSnapshotTestCase {
     override func setUp() {
         super.setUp()
-        recordMode = true
+        //recordMode = true
+        fileNameOptions = .OS
     }
 }

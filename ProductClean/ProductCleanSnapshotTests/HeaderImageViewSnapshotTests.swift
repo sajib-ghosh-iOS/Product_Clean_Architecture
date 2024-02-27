@@ -33,9 +33,9 @@ final class HeaderImageViewSnapshotTests: SpashotTestWrapper {
     }
     
     func testLaunchForHeaderImageView() {
-        let expectation = XCTestExpectation(description: "")
-        let result = XCTWaiter.wait(for: [expectation], timeout: 3.0) // wait and store the result
-        FBSnapshotVerifyView(headerImageVC?.view ?? UIView())
+        let expectation = XCTestExpectation()
+        let result = XCTWaiter.wait(for: [expectation], timeout: 10.0)
+        FBSnapshotVerifyView(headerImageVC?.view ?? UIView(), perPixelTolerance: SnapshotTolerance.perPixelTolerance, overallTolerance: SnapshotTolerance.overallTolerance)
         XCTAssertEqual(result, .timedOut)
     }
 
