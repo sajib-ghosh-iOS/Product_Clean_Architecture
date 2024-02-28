@@ -13,20 +13,13 @@ import SwiftUI
 final class ProductListViewSnapshotTests: SpashotTestWrapper {
 
     let viewModel = ProductListViewModelMock()
-    lazy var productListVC : UIHostingController<ProductListView>? = {
-        let productListView = ProductListView(viewModel: viewModel)
-        return UIHostingController(rootView: productListView)
-    }()
-    
+    var productListVC: UIViewController!
     let products = MockData.productList
     
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
         try super.setUpWithError()
-        let window = UIWindow(frame: CGRect(x: 0, y: 0, width: 100, height: 100))
-        window.rootViewController = productListVC
-        window.makeKeyAndVisible()
-        productListVC?.view.frame = UIScreen.main.bounds
+        productListVC = ProductListView(viewModel: viewModel).toViewController()
     }
 
     override func tearDownWithError() throws {
@@ -39,13 +32,11 @@ final class ProductListViewSnapshotTests: SpashotTestWrapper {
         viewModel.products = products
         let expectation = XCTestExpectation()
         let result = XCTWaiter.wait(for: [expectation], timeout: 10.0)
-        FBSnapshotVerifyView(productListVC?.view ?? UIView(),perPixelTolerance: SnapshotTolerance.perPixelTolerance, overallTolerance: SnapshotTolerance.overallTolerance)
+        FBSnapshotVerifyView(productListVC.view, perPixelTolerance: SnapshotTolerance.perPixelTolerance, overallTolerance: SnapshotTolerance.overallTolerance)
         XCTAssertEqual(result, .timedOut)
     }
     func testLaunchForProductListViewFailure() {
         viewModel.isError = true
-        FBSnapshotVerifyView(productListVC?.view ?? UIView(), perPixelTolerance: SnapshotTolerance.perPixelTolerance, overallTolerance: SnapshotTolerance.overallTolerance)
+        FBSnapshotVerifyView(productListVC.view, perPixelTolerance: SnapshotTolerance.perPixelTolerance, overallTolerance: SnapshotTolerance.overallTolerance)
     }
-    
-
 }

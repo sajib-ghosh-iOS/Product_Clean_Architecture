@@ -10,9 +10,9 @@ import Foundation
 
 final class DefaultNetworkSessionManager: NetworkSessionManager {
 
-    private let session: URLSession
+    private let session: URLSessionProtocol
     private let requestGenerator: URLRequestGenerator
-    init(session: URLSession = .shared,
+    init(session: URLSessionProtocol = URLSession.shared,
          requestGenerator: URLRequestGenerator = DefaultURLRequestGenerator()
     ) {
         self.session = session

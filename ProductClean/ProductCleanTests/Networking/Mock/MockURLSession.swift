@@ -8,11 +8,11 @@
 import Foundation
 @testable import ProductClean
 
-class MockURLSession: URLSession {
+class MockURLSession: URLSessionProtocol {
     var data: Data?
     var urlResponse: URLResponse?
     var error: Error?
-    override func asyncData(for request: URLRequest) async throws -> (Data?, URLResponse?) {
+    func asyncData(for request: URLRequest) async throws -> (Data?, URLResponse?) {
         if let error {
             throw error
         }

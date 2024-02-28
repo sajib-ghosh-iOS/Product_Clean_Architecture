@@ -12,18 +12,12 @@ import SwiftUI
 
 final class ErrorViewSnapshotTests: SpashotTestWrapper {
 
-    lazy var errorVC : UIHostingController<ErrorView>? = {
-        let errorVC = ErrorView(errorTitle: "Error", errorDescription: "Error Description", retryAction: {})
-        return UIHostingController(rootView: errorVC)
-    }()
+    var errorVC: UIViewController!
     
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
         try super.setUpWithError()
-        let window = UIWindow(frame: CGRect(x: 0, y: 0, width: 100, height: 100))
-        window.rootViewController = errorVC
-        window.makeKeyAndVisible()
-        errorVC?.view.frame = UIScreen.main.bounds
+        errorVC = ErrorView(errorTitle: "Error", errorDescription: "Error Description", retryAction: {}).toViewController()
     }
 
     override func tearDownWithError() throws {
@@ -33,7 +27,7 @@ final class ErrorViewSnapshotTests: SpashotTestWrapper {
     }
     
     func testLaunchForErrorView() {
-        FBSnapshotVerifyView(errorVC?.view ?? UIView(), perPixelTolerance: SnapshotTolerance.perPixelTolerance, overallTolerance: SnapshotTolerance.overallTolerance)
+        FBSnapshotVerifyView(errorVC.view, perPixelTolerance: SnapshotTolerance.perPixelTolerance, overallTolerance: SnapshotTolerance.overallTolerance)
     }
 
 }
