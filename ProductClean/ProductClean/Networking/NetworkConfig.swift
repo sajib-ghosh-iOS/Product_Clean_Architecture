@@ -13,13 +13,12 @@ protocol NetworkConfigurable {
 }
 
 class ApiDataNetworkConfig: NetworkConfigurable {
+    
     let baseURL: String
     let headers: [String: String]
     
-     init(
-        baseURL: String,
-        headers: [String: String] = [:]
-     ) {
+     init(baseURL: String,
+        headers: [String: String] = [:]) {
         self.baseURL = baseURL
         self.headers = headers
     }

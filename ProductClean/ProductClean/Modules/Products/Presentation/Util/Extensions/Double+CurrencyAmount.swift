@@ -6,7 +6,9 @@
 //
 
 import Foundation
+
 extension Double {
+    
     /// It converts a double amount to a string with currency
     /// For example double value -> 100, return value -> "$100"
     func getAmountWithCurrency() -> String {

@@ -35,6 +35,7 @@ final class ProductListViewSnapshotTests: SpashotTestWrapper {
         FBSnapshotVerifyView(productListVC.view, perPixelTolerance: SnapshotTolerance.perPixelTolerance, overallTolerance: SnapshotTolerance.overallTolerance)
         XCTAssertEqual(result, .timedOut)
     }
+    
     func testLaunchForProductListViewFailure() {
         viewModel.isError = true
         FBSnapshotVerifyView(productListVC.view, perPixelTolerance: SnapshotTolerance.perPixelTolerance, overallTolerance: SnapshotTolerance.overallTolerance)

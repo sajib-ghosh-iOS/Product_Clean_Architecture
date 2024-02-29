@@ -8,10 +8,12 @@
 import SwiftUI
 
 struct ProductListView<ViewModel>: View where ViewModel: ProductListViewModelProtocol {
+    
     @ObservedObject private var viewModel: ViewModel
     init(viewModel: ViewModel) {
         self.viewModel = viewModel
     }
+    
     var body: some View {
         NavigationStack {
             if viewModel.shouldShowLoader() {
@@ -35,6 +37,7 @@ struct ProductListView<ViewModel>: View where ViewModel: ProductListViewModelPro
             await fetchProducts()
         }
     }
+    
     private func fetchProducts() async {
         if viewModel.isEmpty {
             await viewModel.fetchProducts()

@@ -9,6 +9,7 @@ import Foundation
 import Kingfisher
 
 final class ImageDownloadAuthenticationChallenge : AuthenticationChallengeResponsible {
+    
     func downloader(_ downloader: ImageDownloader, didReceive challenge: URLAuthenticationChallenge, completionHandler: @escaping (URLSession.AuthChallengeDisposition, URLCredential?) -> Void) {
         challenge.trustServer { challangeDisposition, credential in
             completionHandler(challangeDisposition,credential)

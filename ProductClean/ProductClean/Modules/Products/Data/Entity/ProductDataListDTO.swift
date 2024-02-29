@@ -40,6 +40,7 @@ struct ProductDataListDTO: Decodable {
 }
 
 extension ProductDataListDTO {
+    
     func toDomain() -> ProductDomainListDTO {
         .init(productId: productId,
               title: title,

@@ -13,8 +13,7 @@ final class DefaultNetworkSessionManager: NetworkSessionManager {
     private let session: URLSessionProtocol
     private let requestGenerator: URLRequestGenerator
     init(session: URLSessionProtocol = URLSession.shared,
-         requestGenerator: URLRequestGenerator = DefaultURLRequestGenerator()
-    ) {
+         requestGenerator: URLRequestGenerator = DefaultURLRequestGenerator()) {
         self.session = session
         self.requestGenerator = requestGenerator
     }

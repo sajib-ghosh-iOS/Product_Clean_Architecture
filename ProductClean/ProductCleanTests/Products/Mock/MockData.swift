@@ -8,7 +8,7 @@
 import Foundation
 @testable import ProductClean
 
-class MockData {
+final class MockData {
 
     static var mockURL = URL(string: "https://dummyjson.com/products")!
     static var productList: [Product] {

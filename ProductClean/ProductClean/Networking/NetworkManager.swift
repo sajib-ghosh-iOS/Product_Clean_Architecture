@@ -15,8 +15,10 @@ protocol NetworkManager {
 }
 
 final class DefaultNetworkManager: NetworkManager {
+    
     private let config: NetworkConfigurable
     private let sessionManager: NetworkSessionManager
+    
     init(config: NetworkConfigurable,
         sessionManager: NetworkSessionManager = DefaultNetworkSessionManager()) {
         self.config = config

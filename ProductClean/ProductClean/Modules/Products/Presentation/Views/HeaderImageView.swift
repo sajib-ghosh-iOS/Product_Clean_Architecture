@@ -7,9 +7,12 @@
 
 import SwiftUI
 import Kingfisher
+
 struct HeaderImageView: View {
+    
     let urlString: String
     let height: CGFloat
+    
     var body: some View {
         KFImage(URL(string: urlString))
             .placeholder {

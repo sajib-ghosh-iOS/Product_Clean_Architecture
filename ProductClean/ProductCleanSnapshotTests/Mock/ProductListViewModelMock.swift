@@ -8,6 +8,7 @@
 @testable import ProductClean
 
 class ProductListViewModelMock: ProductListViewModelProtocol {
+    
     var products: [ProductListItemViewModel] = []
     var isEmpty: Bool { return products.isEmpty }
     var isError: Bool = false

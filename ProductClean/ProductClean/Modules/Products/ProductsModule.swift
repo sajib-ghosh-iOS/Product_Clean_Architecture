@@ -6,7 +6,9 @@
 //
 
 import Foundation
-class ProductsModule {
+
+final class ProductsModule {
+
     private let apiDataTransferService: DataTransferService
     
     init(apiDataTransferService: DataTransferService) {

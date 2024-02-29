@@ -8,6 +8,7 @@
 import Foundation
 
 final class SharedURLSession {
+    
     static var shared: URLSession {
         let configuration = URLSessionConfiguration.default
         let delegate = SharedURLSessionDelegate()

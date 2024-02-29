@@ -8,6 +8,7 @@
 import Foundation
 
 extension URLAuthenticationChallenge {
+    
     func trustServer(completionHandler: @escaping (URLSession.AuthChallengeDisposition, URLCredential?) -> Void) {
         if self.protectionSpace.authenticationMethod == NSURLAuthenticationMethodServerTrust {
             if let serverTrust = self.protectionSpace.serverTrust {

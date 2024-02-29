@@ -8,7 +8,9 @@
 import SwiftUI
 
 struct ProductDetailsView: View {
+    
     let item: ProductListItemViewModel
+    
     var body: some View {
         ScrollView {
             VStack(alignment: .leading) {

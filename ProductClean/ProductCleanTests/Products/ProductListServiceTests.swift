@@ -7,7 +7,7 @@
 import XCTest
 @testable import ProductClean
 
-class PostServiceTests: XCTestCase {
+final class PostServiceTests: XCTestCase {
 
     var productService: ProductListService!
     var mockDataTransferService: MockDataTransferService!

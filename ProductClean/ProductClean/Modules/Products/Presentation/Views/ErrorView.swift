@@ -8,9 +8,11 @@
 import SwiftUI
 
 struct ErrorView: View {
+    
     let errorTitle: String
     let errorDescription: String
     let retryAction: () -> Void
+    
     var body: some View {
         VStack {
             Image(systemName: AppConstant.errorImage)

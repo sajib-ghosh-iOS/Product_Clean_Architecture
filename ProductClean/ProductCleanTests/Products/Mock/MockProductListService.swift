@@ -7,9 +7,11 @@
 
 @testable import ProductClean
 
-class MockProductListService: ProductListService {
+final class MockProductListService: ProductListService {
+    
     var response: ProductPageDataListDTO?
     var error: Error?
+    
     func fetchProductListFromNetwork() async throws -> ProductPageDataListDTO {
         if let error {
             throw error

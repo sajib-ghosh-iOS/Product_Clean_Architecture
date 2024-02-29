@@ -8,11 +8,13 @@
 import Foundation
 
 extension ProductListView_Previews {
+    
     static func getViewModel() -> ProductListViewModelMock {
         return ProductListViewModelMock()
     }
     
     class ProductListViewModelMock: ProductListViewModelProtocol {
+        
         func shouldShowLoader() -> Bool {isEmpty && isError}
         
         var products: [ProductListItemViewModel] = [.init(id: 1, title: "Title 1", description: "Description 1", price: "$100", image: "https://cdn.dummyjson.com/product-images/50/thumbnail.jpg"),

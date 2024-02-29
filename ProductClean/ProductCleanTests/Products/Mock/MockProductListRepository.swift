@@ -7,9 +7,11 @@
 
 @testable import ProductClean
 
-class MockProductListRepository: ProductListRepository {
+final class MockProductListRepository: ProductListRepository {
+
     var response: [ProductDomainListDTO]?
     var error: Error?
+
     func fetchProductList() async throws -> [ProductDomainListDTO] {
         if let error {
             throw error

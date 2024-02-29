@@ -24,6 +24,7 @@ protocol NetworkRequest {
 }
 
 final class DefaultNetworkRequest: NetworkRequest {
+    
     var path: String
     var method: HTTPMethod
     var headerParameters: [String: String]

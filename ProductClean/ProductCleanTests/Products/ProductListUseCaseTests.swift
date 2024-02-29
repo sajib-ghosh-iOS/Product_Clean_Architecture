@@ -8,7 +8,7 @@
 import XCTest
 @testable import ProductClean
 
-class ProductListUseCaseTest: XCTestCase {
+final class ProductListUseCaseTest: XCTestCase {
     
     var productUseCase: ProductListUseCase!
     var mockProductRepository: MockProductListRepository!

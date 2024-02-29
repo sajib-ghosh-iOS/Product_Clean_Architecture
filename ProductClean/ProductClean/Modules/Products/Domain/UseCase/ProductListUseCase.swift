@@ -12,10 +12,13 @@ protocol ProductListUseCase {
 }
 
 final class DefaultProductListUseCase: ProductListUseCase {
+    
     private let repository: ProductListRepository
+    
     init(repository: ProductListRepository) {
         self.repository = repository
     }
+    
     func fetchProductList() async throws -> [Product] {
         try await repository.fetchProductList().map { $0.toPresentation() }
     }

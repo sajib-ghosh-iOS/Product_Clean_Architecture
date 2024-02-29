@@ -22,6 +22,7 @@ protocol ProductListViewModelInputProtocol {
 typealias ProductListViewModelProtocol = ProductListViewModelInputProtocol & ProductListViewModelOutputProtocol
 
 final class ProductListViewModel: ProductListViewModelProtocol {
+    
     @Published var products: [ProductListItemViewModel] = []
     @Published var isError: Bool = false
     @Published var error: String = ""

@@ -18,6 +18,7 @@ final class NetworkSessionManagerTests: XCTestCase {
                                httpVersion: nil,
                                headerFields: nil)!
     }
+    
     override func setUp() {
         super.setUp()
         mockURLSession = MockURLSession()

@@ -8,7 +8,9 @@
 import SwiftUI
 
 struct ProductItemView: View {
+    
     var item: ProductListItemViewModel
+    
     var body: some View {
         VStack(alignment: .leading) {
             HeaderImageView(urlString: item.image, height: 150)

@@ -8,7 +8,9 @@
 import SwiftUI
 
 struct ProductListLayout: View {
+    
     let items: [ProductListItemViewModel]
+    
     var body: some View {
         List {
             ForEach(items, id: \.id) { item in

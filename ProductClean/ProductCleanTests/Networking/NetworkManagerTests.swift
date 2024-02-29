@@ -15,6 +15,7 @@ final class NetworkManagerTests: XCTestCase {
     
     var response = HTTPURLResponse(url: URL(string: "/products")!, statusCode: 200, httpVersion: nil, headerFields: nil)
     var invalidResponse = HTTPURLResponse(url: URL(string: "/zzzz")!, statusCode: 400, httpVersion: nil, headerFields: nil)
+    
     override func setUp() {
         super.setUp()
         sessionManager = MockNetworkSessionManager()
