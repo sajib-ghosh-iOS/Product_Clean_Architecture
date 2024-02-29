@@ -8,15 +8,10 @@
 import Foundation
 import Kingfisher
 
-class ImageDownloadAuthenticationChallenge : AuthenticationChallengeResponsible {
+final class ImageDownloadAuthenticationChallenge : AuthenticationChallengeResponsible {
     func downloader(_ downloader: ImageDownloader, didReceive challenge: URLAuthenticationChallenge, completionHandler: @escaping (URLSession.AuthChallengeDisposition, URLCredential?) -> Void) {
-        if challenge.protectionSpace.authenticationMethod == NSURLAuthenticationMethodServerTrust {
-            if let serverTrust = challenge.protectionSpace.serverTrust {
-                let credential = URLCredential(trust: serverTrust)
-                completionHandler(.useCredential, credential)
-                return
-            }
+        challenge.trustServer { challangeDisposition, credential in
+            completionHandler(challangeDisposition,credential)
         }
-        completionHandler(.performDefaultHandling, nil)
     }
 }

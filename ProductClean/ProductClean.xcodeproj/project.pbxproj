@@ -40,6 +40,7 @@
 		6DA7C8042B8F810900D60979 /* Double+CurrencyAmount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DA7C8032B8F810900D60979 /* Double+CurrencyAmount.swift */; };
 		6DA7C8072B8F816A00D60979 /* ImageDownloadAuthenticationChallenge.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DA7C8062B8F816A00D60979 /* ImageDownloadAuthenticationChallenge.swift */; };
 		6DA7C8092B8FAD0A00D60979 /* URLSessionProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DA7C8082B8FAD0A00D60979 /* URLSessionProtocol.swift */; };
+		6DA7C80B2B90BE9700D60979 /* URLAuthenticationChallenge+TrustServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DA7C80A2B90BE9700D60979 /* URLAuthenticationChallenge+TrustServer.swift */; };
 		6DE38B9A2B86251A008498A3 /* ProductListViewSnapshotTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DE38B992B86251A008498A3 /* ProductListViewSnapshotTests.swift */; };
 		6DE38BA52B862D68008498A3 /* HeaderImageViewSnapshotTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DE38BA02B862D68008498A3 /* HeaderImageViewSnapshotTests.swift */; };
 		6DE38BA62B862D68008498A3 /* ProductItemViewSnapshotTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DE38BA12B862D68008498A3 /* ProductItemViewSnapshotTests.swift */; };
@@ -145,6 +146,7 @@
 		6DA7C8032B8F810900D60979 /* Double+CurrencyAmount.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Double+CurrencyAmount.swift"; sourceTree = "<group>"; };
 		6DA7C8062B8F816A00D60979 /* ImageDownloadAuthenticationChallenge.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageDownloadAuthenticationChallenge.swift; sourceTree = "<group>"; };
 		6DA7C8082B8FAD0A00D60979 /* URLSessionProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionProtocol.swift; sourceTree = "<group>"; };
+		6DA7C80A2B90BE9700D60979 /* URLAuthenticationChallenge+TrustServer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URLAuthenticationChallenge+TrustServer.swift"; sourceTree = "<group>"; };
 		6DE38B972B86251A008498A3 /* ProductCleanSnapshotTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ProductCleanSnapshotTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6DE38B992B86251A008498A3 /* ProductListViewSnapshotTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductListViewSnapshotTests.swift; sourceTree = "<group>"; };
 		6DE38BA02B862D68008498A3 /* HeaderImageViewSnapshotTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeaderImageViewSnapshotTests.swift; sourceTree = "<group>"; };
@@ -468,6 +470,7 @@
 			isa = PBXGroup;
 			children = (
 				6DA7C8032B8F810900D60979 /* Double+CurrencyAmount.swift */,
+				6DA7C80A2B90BE9700D60979 /* URLAuthenticationChallenge+TrustServer.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -945,6 +948,7 @@
 				6D15AB722B85061100481F94 /* NetworkManager.swift in Sources */,
 				6D15AB762B85493100481F94 /* ProductsModule.swift in Sources */,
 				6D15AB6E2B8501CF00481F94 /* NetworkError.swift in Sources */,
+				6DA7C80B2B90BE9700D60979 /* URLAuthenticationChallenge+TrustServer.swift in Sources */,
 				6D15AB492B8494C400481F94 /* ProductListItemViewModel.swift in Sources */,
 				6D15AB512B84B8DC00481F94 /* ProductItemView.swift in Sources */,
 				6DE38BE12B87A266008498A3 /* ProductListView_Previews.swift in Sources */,
@@ -1101,7 +1105,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -1158,7 +1162,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
