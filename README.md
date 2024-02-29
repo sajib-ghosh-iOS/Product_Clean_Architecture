@@ -14,16 +14,10 @@ This project is built using Clean architecture with MVVM. SwiftUI has been used 
 ### Unit Tests
 Application test coverage is 85% and above.
 
-<img width="823" alt="TestCoverage" src="https://github.com/sajib-ghoshInnofied/Product_Clean_Architecture/assets/15829311/0a281c59-4b7d-49de-a8f1-59ca00894c53">
+<img width="991" alt="Screenshot 2024-02-29 at 9 16 10 PM" src="https://github.com/sajib-ghoshInnofied/Product_Clean_Architecture/assets/15829311/f11e3465-0304-4c0d-9ad2-63f4c712c609">
+
 
 ### Snapshot Tests
-All the views have been covered in snapshot tests.
+All views have been covered in snapshot tests.
 
-I have included snapshot tests for **iPhone SE (3rd Gen) 16.0 and 17.2** simulator/device. If this device (iPhone SE 3rd Gen) with any of the mentioned iOS versions (16.0 or 17.2) is available, please run the test, it should succeed.
-
-Otherwise, if the above mentioned device with mentioned version is not available, please follow the below steps to run the Snapshot tests.
-1. Go to the class **SpashotTestWrapper** and **uncomment** the line ```recordMode = true```
-2. Run the test - CMD + U
-3. After running for the first time, you should get errors in the Snanpshots test cases, please check the errors
-4. Go to the class **SpashotTestWrapper** and **comment** the line ```recordMode = true```
-5. Run the test again, now all the snapshot tests should run succesfully.
+Snapshot test cases are covered for iPhone 15, iOS 17.2
