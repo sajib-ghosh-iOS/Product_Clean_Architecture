@@ -30,7 +30,7 @@ struct ProductListView<ViewModel>: View where ViewModel: ProductListViewModelPro
                             }
                         }
                     }
-                    .navigationTitle(AppConstant.productListTitle)
+                    .navigationTitle(viewModel.title)
             }
         }
         .task {

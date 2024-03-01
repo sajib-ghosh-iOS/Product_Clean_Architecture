@@ -12,5 +12,6 @@ struct ProductListItemViewModel: Hashable {
     var title: String
     var description: String
     var price: String
+    var category: String
     var image: String
 }

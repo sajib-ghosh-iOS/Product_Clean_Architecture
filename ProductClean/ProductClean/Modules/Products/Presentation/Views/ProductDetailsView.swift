@@ -23,7 +23,7 @@ struct ProductDetailsView: View {
                     .font(.title3)
             }
             .padding(10)
-            .navigationTitle(AppConstant.productDetailsTitle)
+            .navigationTitle(item.category)
             .navigationBarTitleDisplayMode(.inline)
         }.preferredColorScheme(.light)
     }

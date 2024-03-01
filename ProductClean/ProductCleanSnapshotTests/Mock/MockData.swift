@@ -9,10 +9,10 @@ import Foundation
 
 class MockData {
     
-    static let productList: [ProductListItemViewModel] = [.init(id: 1, title: "Title 1", description: "Description 1", price: "$100", image: imageURLStrings[0])]
+    static let productList: [ProductListItemViewModel] = [.init(id: 1, title: "Title 1", description: "Description 1", price: "$100", category: "iPhone", image: imageURLStrings[0])]
     
-    static let imageURLStrings = ["https://cdn.dummyjson.com/product-images/50/thumbnail.jpg",
-                                  "https://cdn.dummyjson.com/product-images/60/thumbnail.jpg"]
+    static let imageURLStrings = ["https://cdn.dummyjson.com/product-images/1/thumbnail.jpg",
+                                  "https://cdn.dummyjson.com/product-images/2/thumbnail.jpg"]
     
 }
 

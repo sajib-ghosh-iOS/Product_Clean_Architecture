@@ -12,6 +12,7 @@ struct ProductDomainListDTO {
     let title: String?
     let description: String?
     let price: Int?
+    var category: String?
     let thumbnail: String?
 }
 
@@ -19,9 +20,10 @@ extension ProductDomainListDTO {
     
     func toPresentation() -> Product {
         .init(productId: productId,
-              title: title,
-              description: description,
+              title: title ?? "",
+              description: description ?? "",
               price: Double(price ?? 0),
-              thumbnail: thumbnail)
+              category: category ?? "",
+              thumbnail: thumbnail ?? "")
     }
 }

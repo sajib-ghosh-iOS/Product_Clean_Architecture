@@ -13,6 +13,7 @@ class ProductListViewModelMock: ProductListViewModelProtocol {
     var isEmpty: Bool { return products.isEmpty }
     var isError: Bool = false
     var error: String = "Error"
+    var title: String = "Products"
     func fetchProducts() async {}
     func shouldShowLoader() -> Bool { isEmpty && !isError }
 }

@@ -7,9 +7,6 @@
 
 import Foundation
 struct ProductPageDataListDTO: Decodable {
-    let skip: Int
-    let limit: Int
-    let total: Int
     let products: [ProductDataListDTO]
 }
 struct ProductDataListDTO: Decodable {
@@ -46,6 +43,7 @@ extension ProductDataListDTO {
               title: title,
               description: description,
               price: price,
+              category: category,
               thumbnail: thumbnail)
     }
 }

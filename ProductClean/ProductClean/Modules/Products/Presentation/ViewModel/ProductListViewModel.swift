@@ -12,6 +12,7 @@ protocol ProductListViewModelOutputProtocol: ObservableObject {
     var isError: Bool {get}
     var error: String {get}
     var isEmpty: Bool {get}
+    var title: String {get}
     func shouldShowLoader() -> Bool
 }
 
@@ -27,7 +28,7 @@ final class ProductListViewModel: ProductListViewModelProtocol {
     @Published var isError: Bool = false
     @Published var error: String = ""
     var isEmpty: Bool { return products.isEmpty }
-    
+    var title: String = AppConstant.productListTitle
     private let productListUseCase: ProductListUseCase!
     init(useCase: ProductListUseCase) {
         self.productListUseCase = useCase
@@ -54,10 +55,11 @@ final class ProductListViewModel: ProductListViewModelProtocol {
     /// - Returns: array of ProductListItemViewModel
     private func transformFetchedProducts(products: [Product]) -> [ProductListItemViewModel] {
         products.map { ProductListItemViewModel(id: $0.productId,
-                                           title: $0.title ?? "",
-                                           description: $0.description ?? "",
-                                                price: $0.price?.getAmountWithCurrency() ?? "",
-                                           image: $0.thumbnail ?? "") }
+                                           title: $0.title,
+                                           description: $0.description,
+                                                price: $0.price.getAmountWithCurrency(),
+                                                category: $0.category.capitalized,
+                                           image: $0.thumbnail) }
     }
     
     /// This method checks if the loader should be shown or not
