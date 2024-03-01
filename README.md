@@ -5,16 +5,16 @@ This project is built using Clean architecture with MVVM. SwiftUI has been used 
 
 ## Screenshots
 
-<img width="350" height="600" alt="ProductList" src="https://github.com/sajib-ghoshInnofied/Product_Clean_Architecture/assets/15829311/cad6d8f7-ca0f-40bf-9078-32a87fd4559e">
+<img width="350" height="600" alt="ProductList" src="https://github.com/sajib-ghoshInnofied/Product_Clean_Architecture/assets/15829311/2a342d80-e271-42a6-8e99-c4d1d8849915">
 
-<img width="350" height="600" alt="ProductDetails" src="https://github.com/sajib-ghoshInnofied/Product_Clean_Architecture/assets/15829311/be8ba947-d17e-4f10-83c6-876593be0b07">
+<img width="350" height="600" alt="ProductDetails" src="https://github.com/sajib-ghoshInnofied/Product_Clean_Architecture/assets/15829311/3b71fd40-9f40-43ae-95d7-f9be2960be6d">
 
 ## Test Coverage
 
 ### Unit Tests
 Application test coverage is 85% and above.
 
-<img width="991" alt="Screenshot 2024-02-29 at 9 16 10 PM" src="https://github.com/sajib-ghoshInnofied/Product_Clean_Architecture/assets/15829311/f11e3465-0304-4c0d-9ad2-63f4c712c609">
+<img width="918" alt="CodeCoverage" src="https://github.com/sajib-ghoshInnofied/Product_Clean_Architecture/assets/15829311/5d9ee1c1-1a5d-48af-9f54-21ff0c7df3df">
 
 
 ### Snapshot Tests
