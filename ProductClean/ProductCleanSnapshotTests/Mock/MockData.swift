@@ -9,10 +9,9 @@ import Foundation
 
 class MockData {
     
-    static let productList: [ProductListItemViewModel] = [.init(id: 1, title: "Title 1", description: "Description 1", price: "$100", category: "iPhone", image: imageURLStrings[0])]
+    static let productList: [ProductListItemViewModel] = [.init(id: 1, title: "Title 1", description: "Description 1", price: "$100", category: "iPhone", image: imageURLString)]
     
-    static let imageURLStrings = ["https://cdn.dummyjson.com/product-images/1/thumbnail.jpg",
-                                  "https://cdn.dummyjson.com/product-images/2/thumbnail.jpg"]
+    static let imageURLString = ""
     
 }
 

@@ -39,9 +39,7 @@ struct ProductListView<ViewModel>: View where ViewModel: ProductListViewModelPro
     }
     
     private func fetchProducts() async {
-        if viewModel.isEmpty {
-            await viewModel.fetchProducts()
-        }
+        await viewModel.fetchProducts()
     }
 }
 
