@@ -6,28 +6,26 @@
 //
 
 import XCTest
-import FBSnapshotTestCase
+//import FBSnapshotTestCase
 import SwiftUI
 @testable import ProductClean
 
-final class ProductListLayoutSnapshotTests: SpashotTestWrapper {
+final class ProductListLayoutSnapshotTests: XCTestCase {
 
     var productListLayoutVC: UIViewController!
     
-    override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-        try super.setUpWithError()
+    override func setUp() {
+        super.setUp()
         productListLayoutVC = ProductListLayout(items: MockData.productList).toViewController()
     }
-
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-        try super.tearDownWithError()
+    
+    override func tearDown() {
+        super.tearDown()
         productListLayoutVC = nil
     }
     
     func testLaunchForProductListLayoutView() {
-        FBSnapshotVerifyView(productListLayoutVC?.view ?? UIView(), perPixelTolerance: SnapshotTolerance.perPixelTolerance, overallTolerance: SnapshotTolerance.overallTolerance)
+        productListLayoutVC.performSnapshotTests(named: "ProductListLayoutView")
     }
 
 }
