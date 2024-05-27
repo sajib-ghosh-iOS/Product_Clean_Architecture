@@ -13,7 +13,7 @@ struct ProductDataListDTO: Decodable {
     let productId: Int
     let title: String?
     let description: String?
-    let price: Int?
+    let price: Double?
     let discountPercentage: Double?
     let rating: Double?
     let stock: Int?

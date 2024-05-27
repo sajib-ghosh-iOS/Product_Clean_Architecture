@@ -11,7 +11,7 @@ struct ProductDomainListDTO {
     let productId: Int
     let title: String?
     let description: String?
-    let price: Int?
+    let price: Double?
     var category: String?
     let thumbnail: String?
 }
@@ -22,7 +22,7 @@ extension ProductDomainListDTO {
         .init(productId: productId,
               title: title ?? "",
               description: description ?? "",
-              price: Double(price ?? 0),
+              price: price ?? 0,
               category: category ?? "",
               thumbnail: thumbnail ?? "")
     }
