@@ -53,7 +53,7 @@ final class ProductListViewModel: ProductListViewModelProtocol {
     /// This method maps Product to ProductListItemViewModel
     /// - Parameter products:array of Product
     /// - Returns: array of ProductListItemViewModel
-    private func transformFetchedProducts(products: [Product]) -> [ProductListItemViewModel] {
+    private func transformFetchedProducts(products: [ProductDomainListDTO]) -> [ProductListItemViewModel] {
         products.map { ProductListItemViewModel(id: $0.productId,
                                            title: $0.title,
                                            description: $0.description,

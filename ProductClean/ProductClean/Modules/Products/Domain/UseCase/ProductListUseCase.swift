@@ -8,7 +8,7 @@
 import Foundation
 
 protocol ProductListUseCase {
-    func fetchProductList() async throws -> [Product]
+    func fetchProductList() async throws -> [ProductDomainListDTO]
 }
 
 final class DefaultProductListUseCase: ProductListUseCase {
@@ -19,7 +19,7 @@ final class DefaultProductListUseCase: ProductListUseCase {
         self.repository = repository
     }
     
-    func fetchProductList() async throws -> [Product] {
-        try await repository.fetchProductList().map { $0.toPresentation() }
+    func fetchProductList() async throws -> [ProductDomainListDTO] {
+        try await repository.fetchProductList()
     }
 }

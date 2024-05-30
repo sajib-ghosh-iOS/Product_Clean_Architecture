@@ -9,10 +9,10 @@
 
 class MockProductListUseCase: ProductListUseCase {
 
-    var response: [Product]?
+    var response: [ProductDomainListDTO]?
     var error: Error?
 
-    func fetchProductList() async throws -> [Product] {
+    func fetchProductList() async throws -> [ProductDomainListDTO] {
         if let error {
             throw error
         }

@@ -40,10 +40,10 @@ extension ProductDataListDTO {
     
     func toDomain() -> ProductDomainListDTO {
         .init(productId: productId,
-              title: title,
-              description: description,
-              price: price,
-              category: category,
-              thumbnail: thumbnail)
+              title: title ?? "",
+              description: description ?? "",
+              price: price ?? 0,
+              category: category ?? "",
+              thumbnail: thumbnail ?? "")
     }
 }
