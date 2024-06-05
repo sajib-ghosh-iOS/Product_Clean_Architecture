@@ -7,20 +7,15 @@
 
 import Foundation
 
-protocol ProductListViewModelOutputProtocol: ObservableObject {
+protocol ProductListViewModelProtocol: ObservableObject {
     var products: [ProductListItemViewModel] {get set}
     var isError: Bool {get}
     var error: String {get}
     var isEmpty: Bool {get}
     var title: String {get}
     func shouldShowLoader() -> Bool
-}
-
-protocol ProductListViewModelInputProtocol {
     func fetchProducts() async
 }
-
-typealias ProductListViewModelProtocol = ProductListViewModelInputProtocol & ProductListViewModelOutputProtocol
 
 final class ProductListViewModel: ProductListViewModelProtocol {
     
